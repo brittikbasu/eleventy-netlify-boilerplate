@@ -8,7 +8,7 @@ const Post = createClass({
   render() {
     const entry = this.props.entry;
 
-    return html`
+    return html `
       <main>
         <article>
           <h1>${entry.getIn(["data", "title"], null)}</h1>
@@ -27,6 +27,8 @@ const Post = createClass({
           </p>
 
           <p>${entry.getIn(["data", "summary"], "")}</p>
+          <p>${entry.getIn(["data", "author"], "")}</p>
+
 
           ${this.props.widgetFor("body")}
           <p>
