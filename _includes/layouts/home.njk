@@ -3,4 +3,16 @@ layout: layouts/base.njk
 section: home
 ---
 
+<!--<h1 class="meta--txt meta--primary meta--heading">{{ title }}</h1>-->
+<h1 class="meta--txt meta--primary meta--heading" style="margin-bottom:10px">Upcoming Events</h1>
+<div style="padding:3% 10%">
+<div class="event">
 {{ layoutContent | safe }}
+</div>
+</div>
+
+<h1 class="meta--txt meta--primary meta--heading">Artcles</h1>
+
+
+{% set postslist = collections.posts %}
+{% include "components/postslist.njk" %}
