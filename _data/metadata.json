@@ -1,9 +1,11 @@
 {
-  "title": "Eleventy Netlify Boilerplate",
+  "title": "Death in  Custody",
   "url": "https://eleventy-netlify-boilerplate.netlify.com",
+  "logo": "../../static/img/Logo_Death_in_Custody_Transparent.png",
+  "intro": "Mit der Kampagne “Death in Custody” reagieren wir auf die zahlreichen ungeklärten Todesfälle von Schwarzen Menschen und Menschen of Colour in polizeilichen Gewahrsamsituationen der vergangenen Jahre in Deutschland.",
   "author": {
-    "name": "Dan Urbanowicz",
-    "email": "dan.urbanowicz@gmail.com",
-    "github": "https://github.com/danurbanowicz"
+    "name": "Filled with Love",
+    "email": "hello@filledwith.love",
+    "github": "https://filledwith.love"
   }
 }

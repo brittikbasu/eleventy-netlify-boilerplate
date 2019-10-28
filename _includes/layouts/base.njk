@@ -1,23 +1,36 @@
 <!doctype html>
-<html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+<html {% if section %} data-current="{{ section }}" {% endif %} lang="en">
 
-	{% include "components/head.njk" %}
+{% include "components/head.njk" %}
 
-	<body>
+<body class="parent">
 
-		<header>
-			<em>
-				<a href="{{ '/' | url }}">{{ metadata.title }}</a>
-			</em>
-			{% include "components/nav.njk" %}
-		</header>
+	<header class="sidebar">
+	<div class="sidebar-container">
+	<div>
+	<div style="padding: 3% 10%">
+		<a href="{{ '/' | url }}">	<img src="{{metadata.logo}}" style="width: 23vw;"></a>
+		<a><H2>{{ metadata.intro }}</H2></a> <a href="#" style"text-align:center">Know more</a>	
 
-		<main>
-			{{ layoutContent | safe }}
-		</main>
+		{% include "components/nav.njk" %}
+
+</div>
+	<!--	<iframe src="https://calendar.google.com/calendar/embed?height=207&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FKolkata&amp;src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23009688&amp;showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=1&amp;showTabs=0&amp;mode=AGENDA&amp;showNav=0" style="border-width:0" width="460" height="190" frameborder="0" scrolling="no" style=".agenda .scrollbox {background-color: #f7f7f7}; 	.view-cap, .view-container-border {background-color: #70162e;};"></iframe>-->
+		<div style="width:460px">
+		<a class="twitter-timeline" data-width="460" data-height="600" data-theme="dark" data-link-color="#D97685"
+			href="https://twitter.com/OuryJalloh?ref_src=twsrc%5Etfw">Tweets by OuryJalloh</a>
+		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
 
 		{% include "components/footer.njk" %}
+		</div>
+		</div>
+	</header>
+	<main class="content">
+		{{ layoutContent | safe }}
+	</main>
 
-	</body>
+
+</body>
 
 </html>
