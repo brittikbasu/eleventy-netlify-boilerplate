@@ -9,10 +9,9 @@
     <div class="sidebar-container flex flex-col">
       <a href="{{ '/' | url }}" class="logo flex justify-center"> <img src="{{metadata.logo}}" style="width: 23vw;"></a>
       <div class="flex justify-center"><a class="twitter-timeline" data-width="460" data-height="1200" data-theme="dark"
-          data-link-color="#D97685" href="https://twitter.com/OuryJalloh?ref_src=twsrc%5Etfw">Tweets by
-          OuryJalloh</a></div>
+          data-link-color="#D97685" href="https://twitter.com/OuryJalloh?ref_src=twsrc%5Etfw"></a></div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      {% include "components/footer.njk" %}
+     <div class="flex justify-center"> {% include "components/footer.njk" %} </div>
     </div>
   </header>
 
@@ -23,7 +22,7 @@
     <a href="/contact">
       <button
         class="email_btn fixed right-15 bottom-15 rounded-full flex justify-center h-16 w-16 bottom-0 right-0 m-6">
-        <img src="https://img.icons8.com/carbon-copy/100/000000/new-post.png" style="height:50px;">
+        <img src="https://img.icons8.com/carbon-copy/100/000000/new-post.png" class="max-w-xs h-12">
       </button>
     </a>
   </main>
