@@ -25,7 +25,7 @@
 				</time>
 			</p>
 			{% if post.data.tags %}
-			<p class="meta--txt">
+			<p class="meta--txt tag">
 				{% for tag in post.data.tags %}
 				{%- if tag != "post" -%}
 				{% set tagUrl %}/tags/{{ tag }}/{% endset %}
