@@ -4394,6 +4394,10 @@ h1.site-title--name a:link {
 
 article img {
 	width: 100%;
+	margin-bottom: 1.8em;
+	margin-top: 2.2em;
+
+
 }
 
 .logo {
@@ -4414,4 +4418,16 @@ article>p>a[href] {
 
 .tag>a[href] {
 	color: var(--blue);
+}
+
+.tag>a[href]:hover {
+	color: var(--highlight);
+}
+
+p small {
+	color: hsla(202, 12%, 18%, 0.8);
+}
+
+article p {
+	font-family: "Inter";
 }
