@@ -1,6 +1,6 @@
 ---
 title: AUFKLÄRUNG DER TODESUMSTÄNDE IN GEWAHRSAMSSITUATIONEN JETZT!
-date: 2019-11-05T13:06:31.928Z
+date: 2019-09-28T13:06:31.928Z
 author: Biplab Basu
 summary: |-
   Aufruf und Einladung zum Kampagnen-Start
