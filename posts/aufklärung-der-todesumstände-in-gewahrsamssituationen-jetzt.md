@@ -7,7 +7,6 @@ summary: |-
   am 27. September 2019
 tags:
   - post
-  - event
 ---
 **Aufruf und Einladung zum Kampagnen-Start**
 
