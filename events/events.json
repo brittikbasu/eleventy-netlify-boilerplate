@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/events.njk",
+  "permalink": "events/{{ title | slug }}/index.html",
+  "tags": "post"
+}

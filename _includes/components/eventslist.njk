@@ -1,0 +1,47 @@
+<section class="row sm:px-16 md:px-20">
+{# give padding of style="padding: 0 10%;" in md #}
+	{% for events in eventslist | reverse %}
+	{# for tag in events.data.tags #}
+	{# if tag == "test" #}
+	<article{% if events.url == url %} data-current="current item" {% endif %} class="entry entry--category is-home">
+		<h3 class="entry-heading--category">
+			<a href="{{ events.url | url }}">
+				{% if events.data.title %}
+				{{ events.data.title }}
+				{% else %}
+				Untitled
+				{% endif %}
+			</a>
+		</h3>
+		{% if events.data.description %}
+		<p>
+			<a href="{{ events.url | url }}">
+				{{ events.data.description }}
+			</a>
+		</p>
+		{% endif %}
+		<p class="meta--txt author">
+			<time datetime="{{ events.date | machineDate }}">
+				<!-- <small>{{ events.date | readableDate }} by {{ metadata.author.name }}</small>-->
+				<small class="meta meta--primary author">{{ events.date | readableDate }} by
+					{{ events.data.organizer }}</small>
+
+			</time>
+		</p>
+		{% if events.data.tags %}
+		<p class="meta--txt tag">
+			{% for tag in events.data.tags %}
+			{%- if tag != "events" -%}
+			{% set tagUrl %}/tags/{{ tag }}/{% endset %}
+			<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+			{%- endif -%}
+			{% endfor %}
+		</p>
+
+		{% endif %}
+
+		</article>
+		{# endif #}
+		{# endfor #}
+		{% endfor %}
+</section>
