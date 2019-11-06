@@ -12,7 +12,6 @@ summary: >-
   polizeilichen Gewahrsamsituationen der vergangenen Jahre in Deutschland. 
 tags:
   - post
-  - event
 ---
 Als breites Bündnis antirassistischer Organisationen in Berlin*, laden wir Sie herzlich zur Pressekonferenz anlässlich des Auftakts unserer Kampagne “Death in Custody” ein. Mit der Kampagne reagieren wir auf die zahlreichen ungeklärten Todesfälle von Schwarzen Menschen und Menschen of Colour in polizeilichen Gewahrsamsituationen der vergangenen Jahre in Deutschland. 
 
