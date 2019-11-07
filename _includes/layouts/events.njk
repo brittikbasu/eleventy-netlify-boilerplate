@@ -6,8 +6,9 @@ permalink: /events/index.html
 ---
 <h1 class="meta--txt meta--primary meta--heading">{{ title }}</h1>
 
+
 {{ layoutContent | safe }}
 
-{% set postslist = collections.posts %}
+{% set eventslist = collections.event %}
 {% include "components/eventslist.njk" %}
 
