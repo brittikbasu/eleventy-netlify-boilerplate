@@ -30,12 +30,11 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Event Name", name: "title", widget: "string" }
-      - { label: "Event Date", name: "date", widget: "datetime" }
+      - { label: "Event Date & Time", name: "date", widget: "datetime" }
       - { label: "City", name: "city", widget: "string" }
       - { label: "Organizer", name: "organizer", widget: "string" }
-      - { label: "Event Description", name: "description", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "More Information", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["event"] }
 
   # Our pages e.g. About
   - name: "pages"
