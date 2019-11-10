@@ -16,10 +16,11 @@ html {
 :root {
 	--turkey: white;
 	--white: white;
-	--blue: #d97685;
-	--secondary: #d97685;
+	--primary: #d97685;
 	--highlight: #F7F5DD;
 	--dark: #282f33;
+	--disabled: #8c8c8c;
+
 }
 
 
@@ -56,12 +57,12 @@ code {
 /*
 a[href],
 a[href]:visited {
-	color: var(--blue);
+	color: var(--primary);
 }
 */
 
 a[href] {
-	color: var(--blue);
+	color: var(--primary);
 }
 
 a[href]:not(:hover) {
@@ -153,15 +154,15 @@ a[rel="tag"]:visited {
 	height: 2em;
 	border: 1px solid var(--white);
 	background-color: var(--white);
-	color: var(--blue);
+	color: var(--primary);
 	border-radius: .25em;
 	text-decoration: none;
 	margin: 0 .5em .5em 0;
 }
 
 a[rel="tag"]:hover {
-	border: 1px solid var(--blue);
-	background-color: var(--blue);
+	border: 1px solid var(--primary);
+	background-color: var(--primary);
 	color: var(--white);
 }
 
@@ -195,8 +196,8 @@ textarea {
 }
 
 button {
-	border: 1px solid var(--blue);
-	background-color: var(--blue);
+	border: 1px solid var(--primary);
+	background-color: var(--primary);
 	color: var(--white);
 	cursor: pointer;
 }
@@ -2638,7 +2639,7 @@ h6 {
 
 
 a:hover {
-	color: var(--secondary);
+	color: var(--primary);
 }
 
 a:active {
@@ -4391,6 +4392,11 @@ h1.site-title--name a:link {
 	font-size: 0.875rem;
 }
 
+.event>time {
+	margin-bottom: 0;
+	font-size: 0.875rem;
+}
+
 
 .email_btn {
 	background: hsla(350, 60%, 67%, 0.5);
@@ -4398,7 +4404,7 @@ h1.site-title--name a:link {
 }
 
 .email_btn:hover {
-	background-color: var(--secondary);
+	background-color: var(--primary);
 }
 
 article img {
@@ -4424,7 +4430,7 @@ article>p>a[href] {
 }
 
 .tag>a[href] {
-	color: var(--blue);
+	color: var(--primary);
 }
 
 .tag>a[href]:hover {
@@ -4444,4 +4450,26 @@ article p {
 article h2 {
 	font-size: 27px;
 	line-height: 30px;
+}
+
+a[href] {
+	color: var(--dark);
+}
+
+
+
+.active-tab>svg {
+	fill: var(--primary);
+}
+
+.active-tab>span {
+	color: var(--primary);
+}
+
+.tab svg {
+	fill: var(--disabled);
+}
+
+.tab span {
+	color: var(--disabled);
 }
