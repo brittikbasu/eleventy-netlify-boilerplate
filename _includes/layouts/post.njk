@@ -2,11 +2,21 @@
 layout: layouts/base.njk
 section: post
 ---
-<nav>
-  <a href="{{ '/' | url }}">← Back</a>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<nav class="mt-4 sm:mt-12" onclick="goBack()">
+ <a>← Back</a>
 </nav>
-<article style="padding: 4% 10%;">
-  <h1>{{ title }}</h1>
+
+    <main class="content max-w-full">
+
+<article class="sm:px-16 md:px-20">
+{# style="padding: 4% 10%;" for bigger screens#}
+  <h1 class="text-5xl">{{ title }}</h1>
   <p>
     <small class="meta meta--primary">
       <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ author }}
@@ -20,14 +30,15 @@ section: post
     {% for tag in tags %}
     {%- if tag != "post" -%}
     {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-    <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+    <a href="{{ tagUrl | url }}" rel="tag" class="hashtag">{{ tag }}</a>
     {%- endif -%}
     {% endfor %}
   </p>
   {% endif %}
 
 </article>
+</main>
 
 <nav>
-  <a href="{{ '/' | url }}">← Back</a>
+  <a href="{{ '/#blog' | url }}">← Back</a>
 </nav>

@@ -1,41 +1,46 @@
-<section>
-{# give padding of style="padding: 0 10%;" in md #}
+<h1 class="meta--txt meta--primary meta--heading">Events</h1>
+
+
+<section class="sm:flex sm:flex-wrap mb-20 sm:justify-center">
+	{# give padding of style="padding: 0 10%;" in md #}
 	{% for event in eventslist | reverse %}
 	{# for tag in event.data.tags #}
 	{# if tag == "test" #}
-	<article{% if event.url == url %} data-current="current item" {% endif %} class="event p-5 mb-6 rounded text-lg px-5 mt-4">
+	<article{% if event.url == url %} data-current="current item" {% endif %}
+		class="shadow event p-5 mb-6 rounded text-lg px-5 mt-4 sm:w-5/12 sm:mr-4" onclick="hideTabs()">
 		<h3>
-		<!--	<a href="{{ event.url | url }}">-->
+			<a href="{{ event.url | url }}">
 				{% if event.data.title %}
 				{{ event.data.title }}
 				{% else %}
 				Untitled
 				{% endif %}
-		<!--	</a> -->
+			</a>
 		</h3>
 
 		{% if event.data.description %}
-			<!--
+		<!--
 					<p>
 <a href="{{ event.url | url }}">-->
-				<!--{{ event.data.description }}-->
+		<!--{{ event.data.description }}-->
 		<!--	</a> 
 		</p>
 -->
-				
+
 		{% endif %}
 
-			<time datetime="{{ event.date | machineDate }}">
-				🗓  {{ event.date | readableDate }} 
-				<br>
-				⏰  {{ event.date | readableTime }} Uhr
+		<p datetime="{{ event.date | machineDate }}">
+			🗓 {{ event.date | readableDate }}
+			<!--	⏰  {{ event.date | readableTime }} Uhr-->
 
-				<p>📍 {{ event.data.city }}</p>
-				<p>Organized by ->
+			<!--	<p>Organized by ->
 					{{ event.data.organizer }}
-					</p>
-			</time>
-			
+					</p>-->
+		</p>
+
+		<p>⏰ {{ event.data.start }} bis {{ event.data.end }}</p>
+		<p>📍 {{ event.data.city }}</p>
+
 		{% if event.data.tags %}
 		<p class="meta--txt tag">
 			{% for tag in event.data.tags %}

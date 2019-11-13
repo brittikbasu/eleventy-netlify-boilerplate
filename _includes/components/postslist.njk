@@ -1,41 +1,49 @@
-<section class="row" style="padding: 0 10%;">
+<h1 class="meta--txt meta--primary meta--heading">Blog</h1>
+
+<section class="row sm:px-16 sm:px-20 mb-20 sm:mt-16">
+	{# give padding of style="padding: 0 10%;" in md #}
 	{% for post in postslist | reverse %}
-		<article{% if post.url == url %} data-current="current item" {% endif %} class="entry entry--category is-home">
-<h3 class="entry-heading--category">
-				<a href="{{ post.url | url }}">
-					{% if post.data.title %}
-					{{ post.data.title }}
-					{% else %}
-					Untitled
-					{% endif %}
-				</a>
-			</h3>
-			{% if post.data.summary %}
-			<p>
-							<a href="{{ post.url | url }}">
+	{# for tag in post.data.tags #}
+	{# if tag == "test" #}
+	<article{% if post.url == url %} data-current="current item" {% endif %} class="entry entry--category is-home sm:rounded sm:shadow sm:p-8">
+		<h3 class="entry-heading--category">
+			<a href="{{ post.url | url }}" class="text-2xl">
+				{% if post.data.title %}
+				{{ post.data.title }}
+				{% else %}
+				Untitled
+				{% endif %}
+			</a>
+		</h3>
+		{% if post.data.summary %}
+		<p>
+			<a href="{{ post.url | url }}">
 				{{ post.data.summary }}
-				</a>
-			</p>
-			{% endif %}
-			<p class="meta--txt author">
-				<time datetime="{{ post.date | machineDate }}">
-					<!-- <small>{{ post.date | readableDate }} by {{ metadata.author.name }}</small>-->
-					<small class="meta meta--primary author">{{ post.date | readableDate }} by {{ post.data.author }}</small>
+			</a>
+		</p>
+		{% endif %}
+		<p class="meta--txt author">
+			<time datetime="{{ post.date | machineDate }}">
+				<!-- <small>{{ post.date | readableDate }} by {{ metadata.author.name }}</small>-->
+				<small class="meta meta--primary author text-xs">{{ post.date | readableDate }} by
+					{{ post.data.author }}</small>
 
-				</time>
-			</p>
-			{% if post.data.tags %}
-			<p class="meta--txt tag">
-				{% for tag in post.data.tags %}
-				{%- if tag != "post" -%}
-				{% set tagUrl %}/tags/{{ tag }}/{% endset %}
-				<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-				{%- endif -%}
-				{% endfor %}
-			</p>
+			</time>
+		</p>
+		{% if post.data.tags %}
+		<p class="meta--txt tag">
+			{% for tag in post.data.tags %}
+			{%- if tag != "post" -%}
+			{% set tagUrl %}/tags/{{ tag }}/{% endset %}
+			<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+			{%- endif -%}
+			{% endfor %}
+		</p>
 
-			{% endif %}
+		{% endif %}
 
-			</article>
-	{% endfor %}
+		</article>
+		{# endif #}
+		{# endfor #}
+		{% endfor %}
 </section>
