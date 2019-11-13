@@ -9,7 +9,7 @@ summary: >-
   with murder, after he shot and killed an African-American woman who was inside
   her own home.
 tags:
-  - post
+  - USA
   - Texas
   - Botham Jean
 ---
