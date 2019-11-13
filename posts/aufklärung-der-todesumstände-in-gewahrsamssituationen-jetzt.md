@@ -6,7 +6,7 @@ summary: |-
   Aufruf und Einladung zum Kampagnen-Start
   am 27. September 2019
 tags:
-  - post
+  - Germany
 ---
 **Aufruf und Einladung zum Kampagnen-Start**
 
