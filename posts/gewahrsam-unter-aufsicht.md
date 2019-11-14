@@ -7,7 +7,7 @@ summary: >
   zur Kampagne Death in Custody – Aufklärung der Todesfälle in
   Gewahrsamssituationen jetzt!
 tags:
-  - post
+  - Germany
   - knowledge base
 ---
 **Death in Custody als Initiative zur Etablierung neuer Beschwerdestrukturen in staatlichen Gewahrsamsbereichen**
