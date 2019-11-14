@@ -10,7 +10,7 @@ summary: >-
   warum sein Herz versagte, ist laut Staatsanwaltschaft unklar. War eine
   Vorerkrankung Schuld? Oder doch Gewalteinwirkung?
 tags:
-  - post
+  - Germany
 ---
 ![](/static/img/uke-hamburg.webp)
 
