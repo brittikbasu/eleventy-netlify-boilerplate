@@ -7,7 +7,7 @@ summary: |-
   Germany on his own. As a member of the Hazara ehtnic minority he sought
   safety and protection against further violence and persecution.
 tags:
-  - post
+  - Germany
 ---
 ![](/static/img/online_polizeiwaffe_dpa.jpeg)
 
