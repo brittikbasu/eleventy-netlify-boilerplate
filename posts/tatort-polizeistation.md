@@ -6,7 +6,7 @@ summary: >-
   Immer wieder sterben nicht weiße Menschen in Gewahrsam. Dem will die
   antirassistische Kampagne „Death in Custody“ etwas entgegensetzen.
 tags:
-  - post
+  - Germany
 ---
 ![](/static/img/tatort-polizeistation-.jpeg)
 
