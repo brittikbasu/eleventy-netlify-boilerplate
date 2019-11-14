@@ -9,7 +9,7 @@ summary: >-
   Worte von Zaman Gate, der Witwe von Hussam Fadl. 2014 flohen sie, ihr Mann und
   ihre drei kleinen Kinder aus dem Irak nach Deutschland.
 tags:
-  - post
+  - Germany
 ---
 ![](/static/img/hussam-dadl-2014.jpg)
 
