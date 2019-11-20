@@ -27,8 +27,8 @@
 
 
   <div id="home">
+      {{ layoutContent | safe }}
     <!--  <main class="content max-w-full">-->
-    {{ layoutContent | safe }}
     <!--  </main>-->
   </div>
 
@@ -43,7 +43,7 @@
   </div>
 
   <div id="contact">
-    {% set eventslist = collections.contact.njk %}
+   <!-- {% set eventslist = collections.contact.njk %}-->
     {% include "components/form.njk" %}
   </div>
 </div>
