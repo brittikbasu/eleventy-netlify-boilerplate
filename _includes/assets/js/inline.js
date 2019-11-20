@@ -26,3 +26,22 @@ function hideTabBar() {
   }
 }
 */
+
+
+
+/*
+  function hideTabBar() {
+  if (location.pathname != "/") {
+    const hideTabs = document.querySelector("#tabBar");
+    hideTabs.style.display = "none";
+    console.log("this is" + hideTabs);
+    console.log("I'm out");
+  } else {
+    console.log("at home");
+  }
+}
+
+window.addEventListener("hashchange", function () {
+  hideTabBar();
+}()); 
+*/

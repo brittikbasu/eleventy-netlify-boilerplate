@@ -210,12 +210,6 @@ button {
 	cursor: pointer;
 }
 
-@media screen and (min-width:768px) {
-	:root {
-		/*font-size: 1.1rem;*/
-	}
-}
-
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -1753,7 +1747,8 @@ input[type=submit]:hover {
 	font-size: .55rem;
 	line-height: 1.333;
 	font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
-	margin-bottom: .6665em
+	margin-bottom: .6665em;
+	list-style: none;
 }
 
 .meta--heading {
@@ -4443,6 +4438,7 @@ article h2 {
 
 
 
+
 [role=tab] {
 	border: none;
 }
@@ -4514,4 +4510,41 @@ nav a {
 		background: #fff;
 	}
 
+}
+
+.row{
+	position: absolute;
+}
+
+.filter{
+	border-color: #e0e8ed;
+	list-style: none;
+    color: var(--primary);
+
+	    border-color: #edf2f7;
+    background-color: #edf2f7;
+
+}
+.filter > a {
+	color: var(--primary);
+}
+
+.filter-active {
+	color: #d97584;
+border: 1px hsla(351, 57%, 65%, .07) solid;
+background: #fff;
+}
+
+
+.tab-static-active {
+	border: none;
+
+}
+
+.tab-static-active svg {
+	fill: var(--primary);
+}
+
+.tab-static-active span {
+	color: var(--primary);
 }

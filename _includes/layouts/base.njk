@@ -32,7 +32,7 @@
     <!--  </main>-->
   </div>
 
-  <div id="blog">
+  <div id="articles">
     {% set postslist = collections.posts %}
     {% include "components/postslist.njk" %}
   </div>
@@ -49,10 +49,8 @@
 </div>
 </body>
 <script>
-  var tabs = new Tabby('[data-tabs]');
-
-/*
-  function hideTabBar() {
+var tabs = new Tabby('[data-tabs]');
+window.addEventListener("hashchange", function hideTabBar() {
   if (location.pathname != "/") {
     const hideTabs = document.querySelector("#tabBar");
     hideTabs.style.display = "none";
@@ -61,24 +59,46 @@
   } else {
     console.log("at home");
   }
+
+
+}());
+
+if (location.hash == "#articles") {
+  const activePill = document.querySelector("#all");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
+} else if (location.pathname == "/Germany/") {
+  const activePill = document.querySelector("#germany");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
+} else if (location.pathname == "/Europe/") {
+  const activePill = document.querySelector("#europe");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
+} else if (location.pathname == "/International/") {
+  const activePill = document.querySelector("#international");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
+} else if (location.pathname == "/Opinion/") {
+  const activePill = document.querySelector("#opinion");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
 }
 
-window.addEventListener("hashchange", function () {
-  hideTabBar();
-}()); 
-*/
-
-
-window.addEventListener("hashchange", function hideTabBar(){
-if (location.pathname != "/") {
-    const hideTabs = document.querySelector("#tabBar");
-    hideTabs.style.display = "none";
-    console.log("this is" + hideTabs);
-    console.log("I'm out");
-  } else {
-    console.log("at home");
+var hashChangedTo = function (hash) {
+  location.hash = "#" + hash;
+  if (location.hash == "#articles") {
+    const activePill = document.querySelector("#all");
+    activePill.style.background = "white";
+    activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
   }
-}());
+
+}
 </script>
 
 </html>
