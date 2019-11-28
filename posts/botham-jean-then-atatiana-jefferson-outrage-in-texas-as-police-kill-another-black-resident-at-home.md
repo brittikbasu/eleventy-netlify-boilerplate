@@ -10,8 +10,7 @@ summary: >-
   her own home.
 tags:
   - USA
-  - Texas
-  - Botham Jean
+  - ''
 ---
 ![ Officer Aaron Dean was responding to a non-emergency call](/static/img/seg1-amber-crumb-split.jpg "Police Kill Another Black Resident at Home")
 
