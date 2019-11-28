@@ -9,6 +9,7 @@ summary: >-
   with murder, after he shot and killed an African-American woman who was inside
   her own home.
 tags:
+  - international
   - USA
 ---
 ![ Officer Aaron Dean was responding to a non-emergency call](/static/img/seg1-amber-crumb-split.jpg "Police Kill Another Black Resident at Home")
