@@ -10,7 +10,7 @@ summary: >-
   to create and sustain a sense of national urgency about the U.S. criminal
   justice system.
 tags:
-  - Openion
+  - Opinion
   - USA
 ---
 ## Mission Statement
