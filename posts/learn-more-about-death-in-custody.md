@@ -9,7 +9,7 @@ summary: >-
   community groups have a deep mistrust of law enforcement, and an in-custody
   death automatically heightens suspicion of ‘police brutality.’ 
 tags:
-  - Openion
+  - Opinion
 ---
 ![](/static/img/3-s2.0-b9780128000342003293-f0400329-04-9780128000342.jpg)
 
