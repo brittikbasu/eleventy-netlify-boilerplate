@@ -16,4 +16,6 @@ Es muss endlich Schluss sein mit dem Irrglauben, dass sich eine Person dadurch b
 
 ## Anfrage und Antwort können hier eingesehen werden: KA 19_14660 Todesfälle in Haft
 
+<https://www.ulla-jelpke.de/2019/11/knast-toetet/>
+
 ![](/static/img/gefaengnisflur_marvinsiefke_pixelio_02.jpg "Germany")
