@@ -14,7 +14,7 @@ tags:
 
 Es muss endlich Schluss sein mit dem Irrglauben, dass sich eine Person dadurch bessere, dass sie mit vielen anderen über Jahre oder Jahrzehnte auf kleinstem Raum eingeschlossen wird. Wir brauchen keine Knäste, sondern Rehabilitationszentren, in denen sich mit den gesellschaftlichen und persönlichen Umständen der Täter auseinandergesetzt wird und sie auf ein Leben in Freiheit vorbereitet werden.“
 
-## Anfrage und Antwort können hier eingesehen werden: KA 19_14660 Todesfälle in Haft
+## Anfrage und Antwort können hier eingesehen werden: [KA 19_14660 Todesfälle in Haft](<KA 19_14660 Todesfälle in Haft>)
 
 <https://www.ulla-jelpke.de/2019/11/knast-toetet/>
 
