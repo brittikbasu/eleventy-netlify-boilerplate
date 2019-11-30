@@ -6,7 +6,7 @@ summary: >-
   „2017 haben sich in deutschen Gefängnissen 82 Menschen das Leben genommen, so
   viele wie seit 2005 nicht mehr. 
 tags:
-  - post
+  - Germany
 ---
 „2017 haben sich in deutschen Gefängnissen 82 Menschen das Leben genommen, so viele wie seit 2005 nicht mehr. Dass sich so viele Gefangene gezwungen sehen, das eigene Leben zu beenden, ist entsetzlich. Der Staat trägt für diese Menschen eine Verantwortung – der er aber regelmäßig nicht nachkommt“, kommentiert die innenpolitische Sprecherin der Fraktion DIE LINKE, Ulla Jelpke, die Antwort der Bundesregierung auf eine Kleine Anfrage zu Todesfällen in Haft. Jelpke weiter:
 
