@@ -22,8 +22,9 @@ function goBack() {
       <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ author }}
     </small>
   </p>
-
+<div class="postBody">
   {{ layoutContent | safe }}
+  </div>
 
   {% if tags %}
   <p>

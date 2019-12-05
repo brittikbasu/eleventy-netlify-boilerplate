@@ -46,7 +46,21 @@
     {% include "components/form.njk" %}
   </div>
 </div>
+<style>
+.microlink_card{
+    min-width:100%;
+    padding:1%;
+}
+
+@media (min-width: 768px) {
+.microlink_card{
+
+        height: 33vw;
+}
+}
+  </style>
 </body>
+
 <script>
 var tabs = new Tabby('[data-tabs]');
 window.addEventListener("hashchange", function hideTabBar() {
@@ -98,6 +112,15 @@ var hashChangedTo = function (hash) {
   }
 
 }
+
+
+  document.addEventListener('DOMContentLoaded', function (event) {
+
+if (location.pathname.indexOf("/posts/") == 0){
+    microlink('.postBody a', { size: 'large' })
+}
+  })
+
 </script>
 
 </html>
