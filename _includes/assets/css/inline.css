@@ -4287,7 +4287,7 @@ h1.site-title--name a:link {
 
   .sidebar {
     grid-area: 1 / 1 / 2 / 3;
-    background: white;
+    background: var(--tweety-light);
   }
 
   .content {
@@ -4497,3 +4497,7 @@ input.gsc-input,
   margin-left: 60px !important;
 }
 
+
+html{
+  background-color: var(--tweety-light);
+}
