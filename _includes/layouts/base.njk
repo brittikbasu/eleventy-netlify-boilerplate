@@ -1,126 +1,140 @@
 <!doctype html>
 <html {% if section %} data-current="{{ section }}" {% endif %} lang="en">
-{% include "components/head.njk" %}
+  {% include "components/head.njk" %}
 
-<body class="parent">
+  <body class="parent">
 
 
 
-   <div class="sidebar md:flex md:flex-col p-0 hidden">
-      	<div class="sidebar-container flex flex-col">
-      		<a href="{{ '/' | url }}" class="logo flex justify-center" style="height:15vw">
-          <div class="fixed z-10" style="background: white; width: 28.5vw; height:15vw"></div>
-          <img src="{{metadata.logo}}"
-      				class="logo-img h-auto fixed z-20" style="width:21.5%"></a>
-      		<div class="flex justify-center sm:mt-3"><a class="twitter-timeline" data-width="460"
-      				data-theme="light" data-link-color="#D97685" href="https://twitter.com/DICCampaignDE"></a>
-      		</div>
-      		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      		<div class="flex justify-center"> {% include "components/footer.njk" %} </div>
-      	</div>
+    <div class="sidebar md:flex md:flex-col p-0 hidden">
+      <div class="sidebar-container flex flex-col justify-center">
+        <a href="{{ '/' | url }}" class="logo flex justify-center" style="height:14vw">
+          <div class="fixed z-10" style="background: white; width: 28.5vw; height:14vw"></div>
+          <img src="{{metadata.logo}}" class="logo-img h-auto fixed z-20" style="width:21.5%">
+        </a>
+        <div class="p-4 rounded-lg w-11/12 shadow" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
+    background: hsla(350, 60%, 67%, 0.01);">
+        <p class="text-xs font-semibold" style="margin-bottom:0; font-family: inter;">
+          Seit dem 27. September 2019 gibt es einen ersten Vernetzungsversuch
+          bestehender Initiativen zur Problematik durch die Kampagne „Death in
+          Custody“, die Polizeiarbeit mit Todesfolgen für Persons of Colour
+          aufarbeitet. Der Zusammenschluss besteht aus hauptsächlich
+          Berlin-zentrierten Organisationen, beschäftigt sich aber auch mit
+          bundesweiten Vernetzungsmöglichkeiten.</p>
+          <a href="./#home"><p class="text-center text-xs font-semibold mt-1" style="margin-bottom:0;">KNOW MORE</p></a>
+          </div>
+
+
+        <div class="flex justify-center sm:mt-3"><a class="twitter-timeline" data-width="460" data-theme="light" data-link-color="#D97685" href="https://twitter.com/DICCampaignDE"></a>
+        </div>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+        <div class="flex justify-center"> {% include "components/footer.njk" %} </div>
+      </div>
+    </div>
+
+    <div class="content max-w-full p-3">
+
+      {% include "components/nav.njk" %}
+
+
+      <div id="home">
+        {{ layoutContent | safe }}
       </div>
 
-<div class="content max-w-full p-3">
+      <div id="articles">
+        {% set postslist = collections.posts %}
+        {% include "components/postslist.njk" %}
+      </div>
 
-  {% include "components/nav.njk" %}
+      <div id="events">
+        {% set eventslist = collections.event %}
+        {% include "components/eventslist.njk" %}
+      </div>
 
+      <div id="contact">
+        {% include "components/form.njk" %}
+      </div>
+    </div>
+    <style>
+      .microlink_card {
+        min-width: 100%;
+        padding: 1%;
+      }
 
-  <div id="home">
-      {{ layoutContent | safe }}
-    <!--  <main class="content max-w-full">-->
-    <!--  </main>-->
-  </div>
+      @media (min-width: 768px) {
+        .microlink_card {
 
-  <div id="articles">
-    {% set postslist = collections.posts %}
-    {% include "components/postslist.njk" %}
-  </div>
+          height: 33vw;
+        }
+      }
 
-  <div id="events">
-    {% set eventslist = collections.event %}
-    {% include "components/eventslist.njk" %}
-  </div>
+    </style>
+  </body>
 
-  <div id="contact">
-   <!-- {% set eventslist = collections.contact.njk %}-->
-    {% include "components/form.njk" %}
-  </div>
-</div>
-<style>
-.microlink_card{
-    min-width:100%;
-    padding:1%;
-}
-
-@media (min-width: 768px) {
-.microlink_card{
-
-        height: 33vw;
-}
-}
-  </style>
-</body>
-
-<script>
-var tabs = new Tabby('[data-tabs]');
-window.addEventListener("hashchange", function hideTabBar() {
-  if (location.pathname != "/") {
-    const hideTabs = document.querySelector("#tabBar");
-    hideTabs.style.display = "none";
-    console.log("this is" + hideTabs);
-    console.log("I'm out");
-  } else {
-    console.log("at home");
-  }
+  <script>
+    var tabs = new Tabby('[data-tabs]');
+    window.addEventListener("hashchange", function hideTabBar() {
+      if (location.pathname != "/") {
+        const hideTabs = document.querySelector("#tabBar");
+        hideTabs.style.display = "none";
+        console.log("this is" + hideTabs);
+        console.log("I'm out");
+      } else {
+        console.log("at home");
+      }
 
 
-}());
+    }());
 
-if (location.hash == "#articles") {
-  const activePill = document.querySelector("#all");
-  activePill.style.background = "white";
-  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    if (location.hash == "#articles") {
+      const activePill = document.querySelector("#all");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
 
-} else if (location.pathname == "/germany/") {
-  const activePill = document.querySelector("#germany");
-  activePill.style.background = "white";
-  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    } else if (location.pathname == "/germany/") {
+      const activePill = document.querySelector("#germany");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
 
-} else if (location.pathname == "/europe/") {
-  const activePill = document.querySelector("#europe");
-  activePill.style.background = "white";
-  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    } else if (location.pathname == "/europe/") {
+      const activePill = document.querySelector("#europe");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
 
-} else if (location.pathname == "/international/") {
-  const activePill = document.querySelector("#international");
-  activePill.style.background = "white";
-  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    } else if (location.pathname == "/international/") {
+      const activePill = document.querySelector("#international");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
 
-} else if (location.pathname == "/opinion/") {
-  const activePill = document.querySelector("#opinion");
-  activePill.style.background = "white";
-  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    } else if (location.pathname == "/opinion/") {
+      const activePill = document.querySelector("#opinion");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
 
-}
+    }
 
-var hashChangedTo = function (hash) {
-  location.hash = "#" + hash;
-  if (location.hash == "#articles") {
-    const activePill = document.querySelector("#all");
-    activePill.style.background = "white";
-    activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-  }
+    var hashChangedTo = function(hash) {
+      location.hash = "#" + hash;
+      if (location.hash == "#articles") {
+        const activePill = document.querySelector("#all");
+        activePill.style.background = "white";
+        activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+      }
 
-}
+    }
 
 
-  document.addEventListener('DOMContentLoaded', function (event) {
+    document.addEventListener('DOMContentLoaded', function(event) {
 
-if (location.pathname.indexOf("/posts/") == 0){
-    microlink('.postBody a', { size: 'large' })
-}
-  })
+      if (location.pathname.indexOf("/posts/") == 0) {
+        microlink('.postBody a', {
+          size: 'large'
+        })
+      }
+    })
 
-</script>
+  </script>
 
 </html>
