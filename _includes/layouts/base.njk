@@ -8,29 +8,40 @@
 
     <div class="sidebar md:flex md:flex-col p-0 hidden" style="padding-top: 17vh">
       <div class="sidebar-container flex flex-col justify-center pt-6">
- 
-        <div class="p-4 rounded-lg w-11/12 shadow shadow" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
+
+
+
+        <div id="sidebar-home">
+          <div class="p-4 rounded-lg w-11/12 shadow shadow" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
     background: #fff; padding-top: 0; margin-bottom: 2vh;">
-           <a href="{{ '/' | url }}" class="logo flex justify-center" style="height:11.5vw;">
-          <div class="fixed" style="background: white; height:11.5vw"></div>
-          <img src="{{metadata.logo}}" class="logo-img h-auto w-9/12 mr-4">
-        </a>
-    
-        <p class="text-xs font-semibold" style="margin-bottom:0; font-family: inter;">
-          Seit dem 27. September 2019 gibt es einen ersten Vernetzungsversuch
-          bestehender Initiativen zur Problematik durch die Kampagne „Death in
-          Custody“, die Polizeiarbeit mit Todesfolgen für Persons of Colour
-          aufarbeitet. Der Zusammenschluss besteht aus hauptsächlich
-          Berlin-zentrierten Organisationen, beschäftigt sich aber auch mit
-          bundesweiten Vernetzungsmöglichkeiten.</p>
-          <a href="./"><p class="text-center text-xs font-semibold mt-2" style="margin-bottom:0;">MEHR WISSEN</p></a>
+          </div>
+        </div>
+        <div id="sidebar-articles">
+
+          <div class="p-4 rounded-lg w-11/12 shadow shadow" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
+    background: #fff; padding-top: 0; margin-bottom: 2vh;">
+            <a href="{{ '/' | url }}" class="logo flex justify-center" style="height:11.5vw;">
+              <div class="fixed" style="background: white; height:11.5vw"></div>
+              <img src="{{metadata.logo}}" class="logo-img h-auto w-9/12 mr-4">
+            </a>
+
+            <p class="text-xs font-semibold" style="margin-bottom:0; font-family: inter;">
+              Seit dem 27. September 2019 gibt es einen ersten Vernetzungsversuch
+              bestehender Initiativen zur Problematik durch die Kampagne „Death in
+              Custody“, die Polizeiarbeit mit Todesfolgen für Persons of Colour
+              aufarbeitet. Der Zusammenschluss besteht aus hauptsächlich
+              Berlin-zentrierten Organisationen, beschäftigt sich aber auch mit
+              bundesweiten Vernetzungsmöglichkeiten.</p>
+            <a href="./">
+              <p class="text-center text-xs font-semibold mt-2" style="margin-bottom:0;">MEHR WISSEN</p>
+            </a>
           </div>
 
 
-        <div class="flex justify-center sm:mt-3" style="margin-top:11.5vh"><a class="twitter-timeline" data-width="460" data-theme="light" data-link-color="#D97685" href="https://twitter.com/DICCampaignDE"></a>
+          <div class="flex justify-center sm:mt-3" style="margin-top:11.5vh"><a class="twitter-timeline" data-width="460" data-theme="light" data-link-color="#D97685" href="https://twitter.com/DICCampaignDE"></a>
+          </div>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 
         <div class="flex justify-center"> {% include "components/footer.njk" %} </div>
       </div>
@@ -76,66 +87,96 @@
   </body>
 
   <script>
-    var tabs = new Tabby('[data-tabs]');
-    window.addEventListener("hashchange", function hideTabBar() {
-      if (location.pathname != "/") {
-        const hideTabs = document.querySelector("#tabBar");
-        hideTabs.style.display = "none";
-        console.log("this is" + hideTabs);
-        console.log("I'm out");
-      } else {
-        console.log("at home");
+    const sidebarHome = document.querySelector("#sidebar-home");
+ const sidebarArticles = document.querySelector("#sidebar-articles");
+     sidebarArticles.style.display = "none";
+
+
+ var tabs = new Tabby('[data-tabs]');
+ window.addEventListener("hashchange", function hideTabBar() {
+   const sidebarArticles = document.querySelector("#sidebar-articles");
+
+   if (location.pathname != "/") {
+     const hideTabs = document.querySelector("#tabBar");
+     hideTabs.style.display = "none";
+     console.log("this is" + hideTabs);
+     console.log("I'm out");
+   } else {
+     console.log("at home");
+   }
+
+
+ }());
+
+
+
+ if (location.hash == "#articles") {
+    sidebarArticles.style.display = "block";
+
+   const activePill = document.querySelector("#all");
+   activePill.style.background = "white";
+   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+ } else if (location.pathname == "/germany/") {
+   const activePill = document.querySelector("#germany");
+   activePill.style.background = "white";
+   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
+ } else if (location.pathname == "/europe/") {
+   const activePill = document.querySelector("#europe");
+   activePill.style.background = "white";
+   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
+ } else if (location.pathname == "/international/") {
+   const activePill = document.querySelector("#international");
+   activePill.style.background = "white";
+   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
+ } else if (location.pathname == "/opinion/") {
+   const activePill = document.querySelector("#opinion");
+   activePill.style.background = "white";
+   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+
+ }
+
+ var hashChangedTo = function(hash) {
+   location.hash = "#" + hash;
+   if (location.hash == "#articles") {
+     const activePill = document.querySelector("#all");
+     activePill.style.background = "white";
+     activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+     sidebarArticles.style.display = "block";
+    sidebarHome.style.display = "none";
+
+   } 
+      else if (location.hash == "#events") {
+     sidebarArticles.style.display = "block";
+    sidebarHome.style.display = "none"; 
       }
 
-
-    }());
-
-    if (location.hash == "#articles") {
-      const activePill = document.querySelector("#all");
-      activePill.style.background = "white";
-      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
-    } else if (location.pathname == "/germany/") {
-      const activePill = document.querySelector("#germany");
-      activePill.style.background = "white";
-      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
-    } else if (location.pathname == "/europe/") {
-      const activePill = document.querySelector("#europe");
-      activePill.style.background = "white";
-      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
-    } else if (location.pathname == "/international/") {
-      const activePill = document.querySelector("#international");
-      activePill.style.background = "white";
-      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
-    } else if (location.pathname == "/opinion/") {
-      const activePill = document.querySelector("#opinion");
-      activePill.style.background = "white";
-      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
-    }
-
-    var hashChangedTo = function(hash) {
-      location.hash = "#" + hash;
-      if (location.hash == "#articles") {
-        const activePill = document.querySelector("#all");
-        activePill.style.background = "white";
-        activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+            else if (location.hash == "#contact") {
+     sidebarArticles.style.display = "block";
+    sidebarHome.style.display = "none"; 
       }
 
-    }
+   else {
+     sidebarArticles.style.display = "none";
+    sidebarHome.style.display = "block";
 
 
-    document.addEventListener('DOMContentLoaded', function(event) {
+   }
 
-      if (location.pathname.indexOf("/posts/") == 0) {
-        microlink('.postBody a', {
-          size: 'large'
-        })
-      }
-    })
+ }
+
+
+ document.addEventListener('DOMContentLoaded', function(event) {
+
+   if (location.pathname.indexOf("/posts/") == 0) {
+     microlink('.postBody a', {
+       size: 'large'
+     })
+   }
+ })
+
 
   </script>
 
