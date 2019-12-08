@@ -1308,7 +1308,6 @@ input[type="submit"]:hover {
 }
 
 .entry {
-  background-color: #f7f7f7;
   margin-bottom: 1.5em;
 }
 
@@ -4287,7 +4286,7 @@ h1.site-title--name a:link {
 
   .sidebar {
     grid-area: 1 / 1 / 2 / 3;
-    background: var(--tweety-light);
+    /* background: var(--tweety-light);*/
   }
 
   .content {
@@ -4323,10 +4322,6 @@ article img {
   width: 100%;
   margin-bottom: 1.8em;
   margin-top: 2.2em;
-}
-
-.logo {
-  background: white;
 }
 
 article > p > a {
@@ -4410,16 +4405,12 @@ nav a {
   border-top: 1px solid #e0e8ed;
 }
 
-.content {
-  background: var(--tweety);
-}
-
 .entry {
-  background: white;
+  background: hsla(0, 0%, 100%, 0.94);
 }
 
 .content {
-  background: var(--tweety-light);
+  /*background: var(--tweety-light);*/
 }
 
 @media (max-width: 640px) {
@@ -4480,9 +4471,9 @@ th {
 
 .gsc-control-cse {
   border-color: #ffffff;
-  background-color: var(--tweety-light) !important;
+  background-color: transparent !important;
   margin-top: -30px;
-  border-color: #f4f8fb !important;
+  border-color: transparent !important;
 }
 
 input.gsc-input,
@@ -4497,7 +4488,18 @@ input.gsc-input,
   margin-left: 60px !important;
 }
 
-
-html{
+html {
   background-color: var(--tweety-light);
+}
+
+body {
+  background: url("../../../static/img/emiliano-bar-PaKHbtTDqt0-unsplash.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100vw 100vh !important;
+  background-attachment: fixed !important;
+  min-height: 9250px;
+}
+
+.filter {
+  background-color: hsla(0, 0%, 100%, 0.73);
 }
