@@ -13,8 +13,8 @@
 
         <div id="sidebar-articles">
 
-          <div class="p-4 rounded-lg w-11/12 shadow shadow" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
-    background: #fff; padding-top: 0; margin-bottom: 2vh;">
+          <div class="p-4 rounded-lg w-11/12 shadow-2xl" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
+    background: hsla(0, 0%, 100%, 0.94); padding-top: 0; margin-bottom: 2vh;">
             <a href="{{ '/' | url }}" class="logo flex justify-center" style="height:11.5vw;">
               <div class="fixed" style="background: white; height:11.5vw"></div>
               <img src="{{metadata.logo}}" class="logo-img h-auto w-9/12 mr-4">
@@ -44,7 +44,9 @@
 
     <h3 class="text-center mt-6"> Our Partners</h3>
     <div class="flex flex-col justify-between items-center w-full mb-2 mt-6">
-                <a href=""><img src="../../static/img/e1t1.jpg" alt="" class="w-32"></a>
+        <a href=""><img src="../../static/img/kop white logo.svg" alt="" class="w-16 h-12 mt-1"></a>
+
+                <a href=""><img src="../../static/img/e1t1.jpg" alt="" class="w-32 mt-2"></a>
 
             <a href=""><img src="../../static/img/mr.jpg" alt="" class="w-32 mt-6"></a>
 
@@ -101,6 +103,8 @@
   <script>
     const sidebarHome = document.querySelector("#sidebar-home");
  const sidebarArticles = document.querySelector("#sidebar-articles");
+      const hideTabs = document.querySelector("#tabBar");
+
      sidebarArticles.style.display = "none";
 
 
@@ -109,7 +113,6 @@
    const sidebarArticles = document.querySelector("#sidebar-articles");
 
    if (location.pathname != "/") {
-     const hideTabs = document.querySelector("#tabBar");
      hideTabs.style.display = "none";
      console.log("this is" + hideTabs);
      console.log("I'm out");
@@ -183,11 +186,23 @@
  document.addEventListener('DOMContentLoaded', function(event) {
 
    if (location.pathname.indexOf("/posts/") == 0) {
+     sidebarArticles.style.display = "block";
+    sidebarHome.style.display = "none"; 
      microlink('.postBody a', {
        size: 'large'
      })
    }
+
+    if (location.pathname.indexOf("/events/") == 0){
+        sidebarArticles.style.display = "block";
+    sidebarHome.style.display = "none"; 
+        // hideTabs.style.display = "block";
+
+ }
+
  })
+
+
 
 
   </script>

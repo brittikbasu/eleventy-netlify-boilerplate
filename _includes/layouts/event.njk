@@ -13,9 +13,7 @@ section: event
       <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ organizer }}
     </small>
   </p>
-  
   {{ layoutContent | safe }}
-
   {% if tags %}
   <p>
     {% for tag in tags %}
