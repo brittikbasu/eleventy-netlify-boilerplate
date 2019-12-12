@@ -4417,11 +4417,6 @@ nav a {
   .entry--category {
     border-top: none;
   }
-
-  .content {
-    background: #fff;
-  }
-
   body {
     padding: 0;
     margin: 0;
@@ -4497,7 +4492,8 @@ body {
   background-repeat: no-repeat !important;
   background-size: 100vw 100vh !important;
   background-attachment: fixed !important;
-  min-height: 9250px;
+  height: 10000px;
+  min-height: 100vh;
 }
 
 .filter {

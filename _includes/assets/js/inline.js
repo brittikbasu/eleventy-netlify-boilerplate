@@ -8,6 +8,16 @@ if (window.netlifyIdentity) {
   });
 }
 
+var flipCard = function(card) {
+  if (card === "about") {
+    document.querySelector("#about").className = "hidden";
+    document.querySelector("#partners").className = "block";
+  } else if (card === "partners") {
+    document.querySelector("#about").className = "block";
+    document.querySelector("#partners").className = "hidden";
+  }
+};
+
 /*
 var mySidebar = document.getElementsByClassName('sidebar')[0];
 mySidebar.style.maxHeight = "100px";
@@ -26,8 +36,6 @@ function hideTabBar() {
   }
 }
 */
-
-
 
 /*
   function hideTabBar() {
