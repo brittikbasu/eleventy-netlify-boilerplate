@@ -15,7 +15,7 @@ summary: >-
 
   Aber was war in Fulda wirklich geschehen?
 tags:
-  - post
+  - Germany
 ---
 Matiullah Jabarkhil war als 16-Jähriger aus Afghanistan nach Deutschland gekommen. Drei Jahre später stand der junge Mann völlig perspektiv- und mittellos, ohne Ausbildung oder Arbeit da und hatte bereits seinen Abschiebebescheid in der Tasche.
 
