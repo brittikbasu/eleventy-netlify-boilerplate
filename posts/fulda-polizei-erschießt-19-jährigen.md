@@ -20,7 +20,7 @@ summary: >-
   Perspektive, in Kürze abgeschoben zu werden. Zuletzt war er in der
   Flüchtlingsunterkunft gegenüber der Bäckerei untergebracht.
 tags:
-  - post
+  - Germany
 ---
 Kurz nach vier Uhr früh an diesem Freitagmorgen hatte er gesehen, dass in dem Ladenlokal das Licht anging. Er ging sofort hin, um nach Brot zu fragen. Eine Verkäuferin verschloss jedoch die Tür von innen. Darauf rastete der junge Mann aus und bewarf die Schaufensterscheibe mit Steinen. Ebenso geriet er mit dem Fahrer eines eintreffenden Lieferwagens aneinander.
 
