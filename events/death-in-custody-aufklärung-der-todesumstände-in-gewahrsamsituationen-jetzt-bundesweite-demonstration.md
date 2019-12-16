@@ -1,8 +1,8 @@
 ---
 title: ' "Death in Custody. Aufklärung der Todesumstände in Gewahrsamsituationen jetzt!" Bundesweite Demonstration '
 date: 2020-03-15T12:17:28.236Z
-start: '18:00'
-end: '13:17'
+start: '15:00'
+end: '18:00'
 city: Berlin
 organizer: Kampagne Death In Custody
 tags:
