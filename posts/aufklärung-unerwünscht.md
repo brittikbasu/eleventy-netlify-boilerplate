@@ -6,7 +6,12 @@ summary: >-
   Die Staatsanwaltschaft Berlin beantwortete bis Redaktionsschluss keine
   Anfragen der taz zu dem Ermittlungsverfahren.
 tags:
-  - post
+  - Germany
+  - Muslim
+  - Male
+  - Refugee
+  - 27.06.2016
+  - Berlin
 ---
 Foto: dpa
 
