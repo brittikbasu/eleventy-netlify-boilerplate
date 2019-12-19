@@ -1,5 +1,7 @@
 ---
-title: ' "Death in Custody. Aufklärung der Todesumstände in Gewahrsamsituationen jetzt!" Bundesweite Demonstration '
+title: >-
+  Bundesweite Demonstration : "Death in Custody. Aufklärung der Todesumstände in
+  Gewahrsamsituationen jetzt!" 
 date: 2020-03-15T12:17:28.236Z
 start: '15:00'
 end: '18:00'
@@ -10,11 +12,7 @@ tags:
 ---
 anlässlich der in Berlin gestarteten Kampagne "Death in Custody. Aufklärung der Todesumstände in Gewahrsamsituationen jetzt!" laden wir Euch nächsten 14.03.2020 zu einem bundes- und europaweiten Vernetzungstreffen und zu einer Demo am 15.03. zum Internationalen Tag gegen Polizeigewalt ein.
 
-
-
 Die Kampagne wird sich bis zum Black-Lives-Matter-Month 2020 aktiv dafür einsetzen,
-
-
 
 \    
 
