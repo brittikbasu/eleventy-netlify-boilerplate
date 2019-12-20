@@ -13,6 +13,7 @@ summary: |2-
       The Coroner
       The Inquest
 tags:
+  - opineon
   - UK
 ---
 A 'death in custody' is a generic term which refers to deaths of those in the custody of the State. A non-fatal shooting or severe and extensive injury is not sufficient; there must be a death. However, a death in a road traffic incident, even if the person who dies is under arrest and heading towards a police station in a police car, is not a death in custody.
