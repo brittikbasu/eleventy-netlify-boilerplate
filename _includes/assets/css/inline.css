@@ -4409,9 +4409,6 @@ nav a {
   background: hsla(0, 0%, 100%, 0.94);
 }
 
-.content {
-  /*background: var(--tweety-light);*/
-}
 
 @media (max-width: 640px) {
   .entry--category {
