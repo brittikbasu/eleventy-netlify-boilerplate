@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // sidebarArticles.style.display = "block";
     //   sidebarHome.style.display = "none";
     microlink(".postBody a", {
-      size: "large"
+      //size: "large"
     });
   }
 
