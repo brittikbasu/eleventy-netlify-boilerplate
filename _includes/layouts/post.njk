@@ -14,15 +14,15 @@ function goBack() {
 
     <main class="content max-w-full">
 
-<article class="sm:px-16 md:px-20 p-8 bg-white rounded">
+<article class="sm:px-16 md:px-20 p-5 bg-white rounded leading-snug">
 {# style="padding: 4% 10%;" for bigger screens#}
-  <h1 class="text-5xl"><!--<span style="background-color:#d4d1b19c;"></span>--> {{ title }}</h1>
+  <h1 class="text-4xl"><!--<span style="background-color:#d4d1b19c;"></span>--> {{ title }}</h1>
   <p>
     <small class="meta meta--primary">
       <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ author }}
     </small>
   </p>
-<div class="postBody">
+<div class="postBody mt-5">
   {{ layoutContent | safe }}
   </div>
 

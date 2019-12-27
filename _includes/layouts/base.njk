@@ -63,13 +63,13 @@
 -->
           <!--   
 
-         <div class="flex justify-center sm:mt-3" style="margin-top:11.5vh"><a class="twitter-timeline" data-width="460" data-theme="light" data-link-color="#D97685" href="https://twitter.com/DICCampaignDE"></a>
+         <div class="flex justify-center sm:mt-3" style="margin-top:11.5vh">
+         <a class="twitter-timeline" data-width="460" data-theme="light" data-link-color="#D97685" href="https://twitter.com/DICCampaignDE"></a>
           </div>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 -->
 
 
-   
         <!--<div class="flex justify-center"> {# include "components/footer.njk" #} </div>-->
       </div>
     </div>
@@ -84,15 +84,14 @@
       }
       @media (min-width: 768px) {
         .microlink_card {
-
           height: 33vw;
         }
       }
     </style>
 
     <script>
-const windowHeight = document.querySelector('html').scrollHeight;
-document.querySelector('body').height = windowHeight;
+//const windowHeight = document.querySelector('html').scrollHeight;
+//document.querySelector('body').height = windowHeight;
 /*const myLocation = [{
   path: `/`,
   name: `home`
@@ -115,6 +114,10 @@ else if(window.location.pathname === "/blog/"){
   document.querySelector("#articles-tab-icon").style.fill = '#db7787';
   document.querySelector("#articles-tab").style.color = '#db7787';
 }
+else if(window.location.pathname === "/tweets/"){
+  document.querySelector("#tweets-tab-icon").style.fill = '#db7787';
+  document.querySelector("#tweets-tab").style.color = '#db7787';
+}
 else if(window.location.pathname === "/events/"){
   document.querySelector("#events-tab-icon").style.fill = '#db7787';
   document.querySelector("#events-tab").style.color = '#db7787';
@@ -123,6 +126,39 @@ else if(window.location.pathname === "/contact/"){
   document.querySelector("#contact-tab-icon").style.fill = '#db7787';
   document.querySelector("#contact-tab").style.color = '#db7787';
 }
+
+
+
+
+if (location.pathname == "/blog/") {
+ // sidebarArticles.style.display = "block";
+  const activePill = document.querySelector("#all");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+} else if (location.pathname == "/germany/") {
+  const activePill = document.querySelector("#germany");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+} else if (location.pathname == "/europe/") {
+  const activePill = document.querySelector("#europe");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+} else if (location.pathname == "/international/") {
+  const activePill = document.querySelector("#international");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+} else if (location.pathname == "/opinion/") {
+  const activePill = document.querySelector("#opinion");
+  activePill.style.background = "white";
+  activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+}
+
+
+  if (location.pathname.indexOf("/posts/") == 0) {
+const hideTabs = document.querySelector("#tabBar");
+    hideTabs.style.display = "none";
+
+  }
 
 </script>
   </body>

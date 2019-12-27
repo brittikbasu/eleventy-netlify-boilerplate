@@ -7,7 +7,7 @@ if (window.netlifyIdentity) {
     }
   });
 }
-
+/*
 var flipCard = function(card) {
   if (card === "about") {
     document.querySelector("#about").className = "hidden";
@@ -18,7 +18,7 @@ var flipCard = function(card) {
   }
 };
 
-/*
+
 var mySidebar = document.getElementsByClassName('sidebar')[0];
 mySidebar.style.maxHeight = "100px";
 console.log("my sidebar is " + mySidebar);
@@ -160,3 +160,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
   )();
   */
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  if (location.pathname.indexOf("/posts/") == 0) {
+    // sidebarArticles.style.display = "block";
+    //   sidebarHome.style.display = "none";
+    microlink(".postBody a", {
+      size: "large"
+    });
+  }
+
+  if (location.pathname.indexOf("/events/") == 0) {
+    // sidebarArticles.style.display = "block";
+    //  sidebarHome.style.display = "none";
+    // hideTabs.style.display = "block";
+  }
+});
