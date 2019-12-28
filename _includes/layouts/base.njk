@@ -1,21 +1,21 @@
 <!doctype html>
 <html {% if section %} data-current="{{ section }}" {% endif %} lang="en">
   {% include "components/head.njk" %}
+
   <body class="parent">
-       <div class="sidebar hidden lg:flex lg:flex-col p-0" style="/*padding-top: 17vh*/">
+    <div class="sidebar hidden lg:flex lg:flex-col p-0" style="/*padding-top: 17vh*/">
       <div class="sidebar-container flex flex-col justify-center lg:pt-16">
         {% include "components/intro-card.njk" %}
         {% include "components/twitter-timeline.njk" %}
-    <!-- <div class="flex justify-center"> {# include "components/footer.njk" #} </div>-->
-     </div>
+        <!-- <div class="flex justify-center"> {# include "components/footer.njk" #} </div>-->
+      </div>
     </div>
     <div class="content max-w-full lg:p-3">
-     {% include "components/nav.njk" %}
+      {% include "components/nav.njk" %}
       {{ layoutContent | safe }}
-  </div>
+    </div>
     <script>
-    
-    /*
+      /*
 const windowHeight = document.querySelector('html').scrollHeight;
 document.querySelector('body').height = windowHeight;
 
@@ -39,9 +39,9 @@ const hideTabs = document.querySelector("#tabBar");
   }
 */
 
-
-</script>
+    </script>
 
 
   </body>
+
 </html>

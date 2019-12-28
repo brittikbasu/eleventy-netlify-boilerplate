@@ -23,8 +23,8 @@ var mySidebar = document.getElementsByClassName('sidebar')[0];
 mySidebar.style.maxHeight = "100px";
 console.log("my sidebar is " + mySidebar);
 var contentHeight = document.getElementsByClassName('content')[0].offsetHeight;
-*/
-/*
+
+
 function hideTabBar() {
   if (location.pathname != "/") {
     const hideTabs = document.querySelector("#tabBar");
@@ -35,9 +35,7 @@ function hideTabBar() {
     console.log("at home");
   }
 }
-*/
 
-/*
   function hideTabBar() {
   if (location.pathname != "/") {
     const hideTabs = document.querySelector("#tabBar");
@@ -52,9 +50,8 @@ function hideTabBar() {
 window.addEventListener("hashchange", function () {
   hideTabBar();
 }()); 
-*/
 
-/* js from body
+js from body
     const sidebarHome = document.querySelector("#sidebar-home");
 const sidebarArticles = document.querySelector("#sidebar-articles");
 const hideTabs = document.querySelector("#tabBar");
@@ -150,29 +147,25 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 })
 
-*/
 
-/*
 document.addEventListener('DOMContentLoaded', (event) => {
   if (location.pathname === "/blog/") {
     const activePill = document.querySelector("#blog");
     activePill.style.background = "#d97585";
   }
   )();
-  */
+ 
 
 document.addEventListener("DOMContentLoaded", function(event) {
   if (location.pathname.indexOf("/posts/") == 0) {
-    // sidebarArticles.style.display = "block";
-    //   sidebarHome.style.display = "none";
-    microlink(".postBody a", {
-      //size: "large"
-    });
+    sidebarArticles.style.display = "block";
+    sidebarHome.style.display = "none";
   }
 
   if (location.pathname.indexOf("/events/") == 0) {
-    // sidebarArticles.style.display = "block";
-    //  sidebarHome.style.display = "none";
-    // hideTabs.style.display = "block";
+    sidebarArticles.style.display = "block";
+    sidebarHome.style.display = "none";
+    hideTabs.style.display = "block";
   }
 });
+ */
