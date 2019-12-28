@@ -1,0 +1,21 @@
+<style>
+  .microlink_card {
+    min-width: 100%;
+    padding: 1%;
+  }
+  /* applies to large microlink size
+
+  @media (min-width: 768px) {
+    .microlink_card {
+      height: 33vw;
+    }
+  }*/
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    microlink(".postBody a", {
+      size: "small"
+    });
+  });
+</script>

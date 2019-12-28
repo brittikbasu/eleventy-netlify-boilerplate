@@ -2,41 +2,5 @@
 layout: layouts/base.njk
 section: home
 ---
-       <div class="sidebar md:flex md:flex-col p-0" style="/*padding-top: 17vh*/">
-      <div class="sidebar-container flex flex-col justify-center md:pt-16">
 
-
-        <div id="about">
-          <div class="p-4 md:rounded-lg md:w-11/12 shadow-2xl min-h-screen" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
-    background: hsla(0, 0%, 100%, 0.94); margin-bottom: 2vh;">
-          <!--  <a href="{{ '/' | url }}" class="logo flex justify-center" style="/*height:11.5vw;*/">
-              <div class="fixed" style="background: white; height:11.5vw"></div>
-              <img src="{{metadata.logo}}" class="logo-img h-32 md:h-auto w-9/12 mr-4">
-            </a>-->
-            <p class="text-sm font-medium text-center mt-2" style="margin-bottom:0; font-family: inter;">
-              Seit dem 27. September 2019 gibt es einen ersten Vernetzungsversuch
-              bestehender Initiativen zur Problematik durch die Kampagne „Death in
-              Custody“, die Polizeiarbeit mit Todesfolgen für Persons of Colour
-              aufarbeitet. Der Zusammenschluss besteht aus hauptsächlich
-              Berlin-zentrierten Organisationen, beschäftigt sich aber auch mit
-              bundesweiten Vernetzungsmöglichkeiten.</p>
-   
-
-
-            <h4 class="text-center mt-8">Our Partners</h4>
-            <marquee class="w-full overflow-x-scroll">
-            <div class="flex flex-row flex-no-wrap mb-2 mt-2 overflow-x-scroll items-center justify-between" style="width:50rem">
-              <a href="https://kop-berlin.de/"><img src="../../static/img/kop white logo.svg" alt="" class="w-16 h-14 mt-1"></a>
-              <a href="https://www.eoto-archiv.de/"><img src="../../static/img/e1t1.jpg" alt="" class="w-32 ml-6 xl:mt-0 lg:ml-4"></a>
-              <a href="https://bdb-germany.de/de/willkommen/"><img src="../../static/img/cropped-bund-antidiskriminierung-bildungsarbeit-logo.png" alt="" class="mt-2 ml-4 w-24 h-8 md:mt-6 lg:ml-4"></a>
-              <a href="http://www.migrationsrat.de/"><img src="../../static/img/mr.jpg" alt="" class="mt-2 w-32 ml-4 md:mt-6 lg:ml-4"></a>
-              <a href="https://justizwatch.noblogs.org/"><img src="../../static/img/jw.jpg" alt="" class="w-32 ml-4 mt-2 md:mt-6 rounded md:ml-6"></a>
-              <a href="http://isdonline.de/"><img src="../../static/img/isd.jpg" alt="" class="w-16 mt-2 h-12 ml-4 lg:mt-4 lg:ml-4"></a>
-              <a href="https://wearebornfreeberlin.wordpress.com/"><img src="../../static/img/we-are-born-free.jpg" alt="" class="w-12 h-12 mt-2 ml-4 rounded-full lg:ml-4"></a>
-            </marquee>
-                     <button onclick="flipCard('about')" class="mt-6 rounded">
-              <p class="text-center text-xs font-semibold mt-2" style="color:#dd7888;">MEHR WISSEN</p>
-            </button>
-            </div>
-          </div>
-        </div>
+{% include "components/intro-card.njk" %}
