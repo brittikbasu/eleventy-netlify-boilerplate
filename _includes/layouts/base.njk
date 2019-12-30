@@ -4,81 +4,35 @@
 
   <body class="parent">
 
-    
-      <div class="sidebar lg:flex lg:flex-col p-0" style="/*padding-top: 17vh*/">
-        <div class="sidebar-container flex flex-col justify-center lg:pt-16">
-          {% include "components/intro-card.njk" %}
+<div class="sidebar lg:flex lg:flex-col p-0" style="/*padding-top: 17vh*/">
+  <div class="sidebar-container flex flex-col justify-center lg:pt-16">
+    {% include "components/intro-card.njk" %}
+    {% include "components/floating-nav.njk" %}
+    {% include "components/twitter-timeline.njk" %}
+    {# include "components/footer.njk" #}
 
-<div class="z-50 hidden lg:block fixed bottom-0 right-0 mb-8 mr-4">
-     
-      <div onclick="hashChangedTo('events')" class="shadow-2xl rounded-full bg-white w-16 h-16 mt-6 flex justify-center">
-        <a href="/events/" class="tab focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
-         <svg width="25" height="25" viewBox="0 0 42 42" class="inline-block">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="events-tab-icon">
-            <path d="M368.005 272h-96v96h96v-96zm-32-208v32h-160V64h-48v32h-24.01c-22.002 0-40 17.998-40 40v272c0 22.002 17.998 40 40 40h304.01c22.002 0 40-17.998 40-40V136c0-22.002-17.998-40-40-40h-24V64h-48zm72 344h-304.01V196h304.01v212z" />
-          </svg>
-         </svg>
-         <span class="block text-xs" id="events-tab">Events</span>
-         </a>
-    </div>
-
-
-    <div onclick="hashChangedTo('contact')" class="shadow-2xl rounded-full bg-white w-16 h-16 mt-6 flex justify-center"><a href="/contact/" class="tab focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
-        <svg width="23" height="23" viewBox="0 0 42 42" class="inline-block">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="contact-tab-icon">
-            <path d="M437.332 80H74.668C51.199 80 32 99.198 32 122.667v266.666C32 412.802 51.199 432 74.668 432h362.664C460.801 432 480 412.802 480 389.333V122.667C480 99.198 460.801 80 437.332 80zM432 170.667L256 288 80 170.667V128l176 117.333L432 128v42.667z" />
-          </svg>
-        </svg>
-        <span class="block text-xs" id="contact-tab">Contact</span>
-      </a>
-    </div>
+  </div>
 </div>
 
-          {% include "components/twitter-timeline.njk" %}
-          <!-- <div class="flex justify-center"> {# include "components/footer.njk" #} </div>-->
-        </div>
-      </div>
-    </div>
 
-    <div class="top-0 sticky content max-w-full lg:p-3">
-      <a href="{{ '/' | url }}" class="pb-2 logo flex justify-center bg-white lg:hidden" style="/*height:11.5vw;*/">
-       <div class="fixed" style="height:11.5vw"></div>
-        <img src="{{metadata.logo}}" class="logo-img h-32 md:h-auto w-7/12 h-full mr-4">
-      </a>
-      {% include "components/nav.njk" %}
-      {% set postslist = collections.posts %}
-      {% include "components/postslist.njk" %}
+<div class="content max-w-full lg:p-3 top-0 sticky">
+
+  {{ layoutContent | safe }}
+
+</div>
 
 
-
-
-
-    <script>
+<script>
       /*
 const windowHeight = document.querySelector('html').scrollHeight;
 document.querySelector('body').height = windowHeight;
-
-const myLocation = [{
-  path: `/`,
-  name: `home`
-},
-{
-  path: `/blog/`,
-  name: `blog`
-},
-{
-  path: `/blog`,
-  name: `articles`
-}
-]
 
   if (location.pathname.indexOf("/posts/") == 0) {
 const hideTabs = document.querySelector("#tabBar");
     hideTabs.style.display = "none";
   }
 */
-
-    </script>
+</script>
 
 
   </body>
