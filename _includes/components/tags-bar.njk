@@ -1,0 +1,48 @@
+<ul class="flex flex-wrap justify-center sm:mt-20 w-full pl-0 mb-10 font-semibold">
+
+    <li class="mr-3 meta--txt mb-3">
+      <a href="/germany/" class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" id="germany">🇩🇪 Germany</a>
+    </li>
+    <li class="mr-3 meta--txt">
+      <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/europe/" id="europe">🇪🇺 Europe</a>
+    </li>
+
+    <li class="mr-3 meta--txt">
+      <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white filter py-2 px-4 text-xs" href="/" id="all">All</a>
+    </li>
+
+    <li class="mr-3 meta--txt">
+      <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/international/" id="international">🌏 International</a>
+    </li>
+    <li class="mr-3 meta--txt">
+      <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/opinion/" id="opinion">💭 Opinion</a>
+    </li>
+  </ul>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    if (location.pathname == "/") {
+      // sidebarArticles.style.display = "block";
+      const activePill = document.querySelector("#all");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    } else if (location.pathname == "/germany/") {
+      const activePill = document.querySelector("#germany");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    } else if (location.pathname == "/europe/") {
+      const activePill = document.querySelector("#europe");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    } else if (location.pathname == "/international/") {
+      const activePill = document.querySelector("#international");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    } else if (location.pathname == "/opinion/") {
+      const activePill = document.querySelector("#opinion");
+      activePill.style.background = "white";
+      activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
+    }
+  });
+
+</script>

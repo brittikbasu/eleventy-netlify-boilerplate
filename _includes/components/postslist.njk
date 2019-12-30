@@ -1,27 +1,8 @@
 <section class="w-full flex flex-col items-center sm:px-16 sm:px-20 mb-20">
 
 
-  <ul class="flex flex-wrap justify-center sm:mt-20 w-full pl-0 mb-10">
-    <h3 class="pt-2 mr-3">Tags</h3>
+    {% include "components/tags-bar.njk" %}
 
-    <li class="mr-3 meta--txt mb-3">
-      <a href="/germany/" class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" id="germany">🇩🇪 Germany</a>
-    </li>
-    <li class="mr-3 meta--txt">
-      <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/europe/" id="europe">🇪🇺 Europe</a>
-    </li>
-
-    <li class="mr-3 meta--txt">
-      <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white filter py-2 px-4 text-xs" href="/#articles" id="all">All</a>
-    </li>
-
-    <li class="mr-3 meta--txt">
-      <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/international/" id="international">🌏 International</a>
-    </li>
-    <li class="mr-3 meta--txt">
-      <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/opinion/" id="opinion">💭 Opinion</a>
-    </li>
-  </ul>
 
   {% include "components/google-search.njk" %}
 

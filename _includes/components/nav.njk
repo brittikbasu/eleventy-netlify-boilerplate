@@ -12,14 +12,10 @@
             class="h-32 w-48"></a>-->
 
 
-<nav class="w-full">
-  <a href="{{ '/' | url }}" class="pb-2 logo flex justify-center bg-white lg:hidden" style="/*height:11.5vw;*/">
-    <div class="fixed" style="height:11.5vw"></div>
-    <img src="{{metadata.logo}}" class="logo-img h-32 md:h-auto w-7/12 h-full mr-4">
-  </a>
+<nav class="w-full lg:hidden">
   <ul class="sm:rounded tab-bar sticky top-0 block inset-x-0 z-10 bg-white flex justify-between px-4 md:px-16 my-0" style="list-style:none; background-color:#FFF;" id="tabBar">
 
-    <li onclick="/*hashChangedTo('home')*/" class="lg:hidden"><a href="/" class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+    <li onclick="/*hashChangedTo('home')*/" class=""><a href="/" class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
         <svg width="25" height="25" viewBox="0 0 42 42" class="inline-block mb-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="home-tab-icon">
             <path d="M208 448V320h96v128h97.6V256H464L256 64 48 256h62.4v192z" /></svg>
@@ -39,7 +35,7 @@
 
       </a>
     </li>
-    <li onclick="hashChangedTo('events')" class="lg:hidden"><a href="/tweets/" class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+    <li onclick="hashChangedTo('events')" class=""><a href="/tweets/" class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="inline-block mb-1" id="tweets-tab-icon">
           <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
         </svg>

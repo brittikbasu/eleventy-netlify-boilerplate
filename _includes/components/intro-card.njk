@@ -1,4 +1,4 @@
-<div class="p-4 lg:rounded-lg lg:w-11/12 shadow-2xl min-h-screen lg:min-h-0" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15); background: hsla(0, 0%, 100%, 0.94); margin-bottom: 2vh;">
+<div class="p-4 lg:rounded-lg lg:w-11/12 shadow-2xl lg:min-h-0" style="min-height:72vh; margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15); background: hsla(0, 0%, 100%, 0.94); margin-bottom: 2vh;">
   <a href="{{ '/' | url }}" class="hidden lg:flex logo flex justify-center">
     <div class="fixed" style="background: white; height:11.5vw"></div>
     <img src="{{ metadata.logo }}" class="logo-img h-32 lg:h-auto w-9/12 mr-4" />
@@ -12,7 +12,7 @@
     bundesweiten Vernetzungsmöglichkeiten.
   </p>
   <h4 class="text-center mt-8">Our Partners</h4>
-  {% include "components/tags-marquee.njk" %}
+  {% include "components/logos-marquee.njk" %}
   <button onclick="flipCard('about')" class="mt-6 rounded">
     <p class="text-center text-xs font-semibold mt-2" style="color:#dd7888;">
       MEHR WISSEN
