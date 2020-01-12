@@ -17,10 +17,11 @@
   --text-muted: #899aa7;
   --tweety: #e0e8ed;
   --tweety-light: #f4f8fb;
+  --jail: #494949;
 }
 
 html {
-  background-color: var(--tweety-light);
+  background-color: var(--jail);
   font-family: Inter, sans-serif;
 }
 
@@ -185,23 +186,6 @@ article p {
 .event > time {
   margin-bottom: 0;
   font-size: 0.875rem;
-}
-
-.filter {
-  list-style: none;
-  color: var(--primary);
-  border-color: #edf2f7;
-  background-color: hsla(0, 0%, 100%, 0.73);
-}
-
-.filter > a {
-  color: var(--primary);
-}
-
-.filter-active {
-  color: #d97584;
-  border: 1px hsla(351, 57%, 65%, 0.07) solid;
-  background: #fff;
 }
 
 .tab-static-active {

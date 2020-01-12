@@ -1,9 +1,20 @@
-<div class="p-4 lg:rounded-lg lg:w-11/12 shadow-2xl lg:min-h-0" style="min-height:72vh; margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15); background: hsla(0, 0%, 100%, 0.94); margin-bottom: 2vh;">
+<div
+  class="intro-card flex flex-col p-4 lg:rounded-lg lg:w-11/12 shadow-2xl lg:min-h-0"
+  id="home-tab"
+>
   <a href="{{ '/' | url }}" class="hidden lg:flex logo flex justify-center">
     <div class="fixed" style="background: white; height:11.5vw"></div>
-    <img src="{{ metadata.logo }}" class="logo-img h-32 lg:h-auto w-9/12 mr-4" />
+    <img
+      src="{{ metadata.logo }}"
+      class="logo-img h-32 lg:h-auto w-9/12 mr-4"
+    />
   </a>
-  <p class="text-sm font-medium text-center mt-2" style="margin-bottom:0; font-family: inter;">
+  <h4 class="text-center mt-3 lg:hidden">Über Uns</h4>
+
+  <p
+    class="text-sm font-medium text-center mt-2"
+    style="margin-bottom:0; font-family: inter;"
+  >
     Seit dem 27. September 2019 gibt es einen ersten Vernetzungsversuch
     bestehender Initiativen zur Problematik durch die Kampagne „Death in
     Custody“, die Polizeiarbeit mit Todesfolgen für Persons of Colour
@@ -11,11 +22,30 @@
     Berlin-zentrierten Organisationen, beschäftigt sich aber auch mit
     bundesweiten Vernetzungsmöglichkeiten.
   </p>
-  <h4 class="text-center mt-8">Our Partners</h4>
+  <h4 class="text-center mt-8">Unsere Partner</h4>
   {% include "components/logos-marquee.njk" %}
-  <button onclick="flipCard('about')" class="mt-6 rounded">
-    <p class="text-center text-xs font-semibold mt-2" style="color:#dd7888;">
+  <button
+    onclick="flipCard('about')"
+    class="mt-6 rounded border-solid border-2 p-2 w-6/12 self-center rounded-full"
+  >
+    <p class="text-center text-xs font-semibold" style="color:#dd7888">
       MEHR WISSEN
     </p>
   </button>
 </div>
+
+<style>
+  .intro-card {
+    min-height: 72vh;
+    margin: 0 auto;
+    border: 1px solid hsla(350, 57%, 65%, 0.15);
+    background: hsla(0, 0%, 100%, 0.94);
+    margin-bottom: 2vh;
+  }
+
+  @media (max-width: 1023px) {
+    .intro-card {
+      margin-top: 30vh;
+    }
+  }
+</style>
