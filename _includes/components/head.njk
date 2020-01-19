@@ -2,9 +2,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title or renderData.title or metadata.title }}</title>
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% set css %}
+  {% include "assets/css/tailwind.min.css" %}
   {% include "assets/css/inline.css" %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
