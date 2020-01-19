@@ -87,9 +87,8 @@
       </a>
     </li>
 
-    <li>
+    <li onclick="activateTab('events')">
       <a
-        href="/events/"
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
         <svg
@@ -112,9 +111,8 @@
       </a>
     </li>
 
-    <li>
+    <li onclick="activateTab('contact')">
       <a
-        href="/contact/"
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
         <svg
@@ -140,10 +138,10 @@
 </nav>
 
 <script>
-  const allTabs = ["home", "tweets", "articles"];
+  const allTabs = ["home", "tweets", "articles", "events", "contact"];
   const activateTab = activeTab => {
     if (window.location.pathname != "/" && window.innerWidth < 1024) {
-      window.location.href = `${window.location.origin}/#${activeTab}-tab`;
+      window.location.href = `${window.location.origin}/#${activeTab}`;
     }
     if (window.innerWidth < 1024) {
       allTabs.forEach(eachTab => {

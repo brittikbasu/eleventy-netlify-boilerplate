@@ -1,4 +1,5 @@
-<section class="sm:flex sm:flex-wrap mb-20 sm:justify-center">
+{% set eventslist = collections.event %}
+<section class="sm:flex sm:flex-wrap mb-20 sm:justify-center" id="events-tab">
 	{# give padding of style="padding: 0 10%;" in md #}
 	{% for event in eventslist | reverse %}
 	{# for tag in event.data.tags #}
