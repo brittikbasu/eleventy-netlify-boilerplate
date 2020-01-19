@@ -49,3 +49,9 @@
     }
   }
 </style>
+
+<script>
+  if (location.pathname.indexOf("/posts/") == 0) {
+    document.querySelector("#home-tab").style.display = "none";
+  }
+</script>

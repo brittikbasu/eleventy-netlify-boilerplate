@@ -2,10 +2,7 @@
 layout: layouts/base.njk
 section: home
 ---
- <a href="{{ '/' | url }}" class="pb-2 logo flex justify-center bg-white lg:hidden" style="/*height:11.5vw;*/">
-   <div class="fixed" style="height:11.5vw"></div>
-   <img src="{{metadata.logo}}" class="logo-img h-32 md:h-auto w-7/12 h-full mr-4">
- </a>
+ {% include "components/logo.njk" %}
  {% include "components/nav.njk" %}
  {% set postslist = collections.posts %}
  {% include "components/postslist.njk" %}

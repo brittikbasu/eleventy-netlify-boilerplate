@@ -4,21 +4,14 @@ section: post
 ---
 {% include "components/microlink.njk" %}
 
-
-<script>
-  function goBack() {
-    window.history.back();
-  }
-
-</script>
-
-<!--<nav class="mt-4 sm:mt-12" onclick="goBack()">
- <a>← Back</a>
-</nav>-->
+{% include "components/logo.njk" %}
+<div class="bottom-0 fixed w-screen">
+{% include "components/nav.njk" %}
+</div>
 
 <main class="content max-w-full">
 
-  <article class="sm:px-16 md:px-20 p-5 bg-white rounded leading-snug">
+  <article class="sm:px-16 md:px-20 p-5 bg-white lg:rounded leading-snug">
     {# style="padding: 4% 10%;" for bigger screens#}
     <h1 class="text-4xl">
       <!--<span style="background-color:#d4d1b19c;"></span>--> {{ title }}</h1>
@@ -44,7 +37,19 @@ section: post
 
   </article>
 </main>
-
+<!--
 <nav>
   <a href="{{ '/#blog' | url }}">← Back</a>
 </nav>
+-->
+<!--
+<script>
+  function goBack() {
+    window.history.back();
+  }
+
+</script>
+-->
+<!--<nav class="mt-4 sm:mt-12" onclick="goBack()">
+ <a>← Back</a>
+</nav>-->
