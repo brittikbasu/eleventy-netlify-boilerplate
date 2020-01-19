@@ -17,7 +17,7 @@
     style="list-style:none; background-color:#FFF;"
     id="tabBar"
   >
-    <li onclick="activateTab('home-tab')">
+    <li onclick="activateTab('home')">
       <a
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
@@ -41,7 +41,7 @@
       </a>
     </li>
 
-    <li onclick="activateTab('articles-tab')">
+    <li onclick="activateTab('articles')">
       <a
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
@@ -67,7 +67,7 @@
         <span class="block text-xs" id="articles-tab-text">Articles</span>
       </a>
     </li>
-    <li onclick="activateTab('tweets-tab')">
+    <li onclick="activateTab('tweets')">
       <a
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
@@ -140,48 +140,35 @@
 </nav>
 
 <script>
-  /*
-  if (window.location.pathname === "/") {
-    document.querySelector("#home-tab-icon").style.fill = "#db7787";
-    document.querySelector("#home-tab-text").style.color = "#db7787";
-  } else if (window.location.pathname === "/blog/") {
-    document.querySelector("#articles-tab-icon").style.fill = "#db7787";
-    document.querySelector("#articles-tab-text").style.color = "#db7787";
-  } else if (window.location.pathname === "/tweets/") {
-    document.querySelector("#tweets-tab-icon").style.fill = "#db7787";
-    document.querySelector("#tweets-tab-text").style.color = "#db7787";
-  } else if (window.location.pathname === "/events/") {
-    document.querySelector("#events-tab-icon").style.fill = "#db7787";
-    document.querySelector("#events-tab-text").style.color = "#db7787";
-  } else if (window.location.pathname === "/contact/") {
-    document.querySelector("#contact-tab-icon").style.fill = "#db7787";
-    document.querySelector("#contact-tab-text").style.color = "#db7787";
-  }
-*/
-  const allTabs = ["home-tab", "tweets-tab", "articles-tab"];
-  if (window.location.pathname === "/") {
-    document.querySelector(`#home-tab`).style.display = "flex";
-    document.querySelector(`#home-tab-icon`).style.fill = "#db7787";
-    document.querySelector(`#home-tab-text`).style.color = "#db7787";
-  }
-  const activateTab = tab => {
+  const allTabs = ["home", "tweets", "articles"];
+  const activateTab = activeTab => {
+    if (window.location.pathname != "/" && window.innerWidth < 1024) {
+      window.location.href = `${window.location.origin}/#${activeTab}-tab`;
+    }
     if (window.innerWidth < 1024) {
       allTabs.forEach(eachTab => {
-        document.querySelector(`#${eachTab}`).style.display = "none";
-        document.querySelector(`#${eachTab}-icon`).style.fill = "#899aa7";
-        document.querySelector(`#${eachTab}-text`).style.color = "#8c8c8c";
+        document.querySelector(`#${eachTab}-tab`).style.display = "none";
+        document.querySelector(`#${eachTab}-tab-icon`).style.fill = "#899aa7";
+        document.querySelector(`#${eachTab}-tab-text`).style.color = "#8c8c8c";
       });
-      document.querySelector(`#${tab}`).style.display = "flex";
-      document.querySelector(`#${tab}-icon`).style.fill = "#db7787";
-      document.querySelector(`#${tab}-text`).style.color = "#db7787";
+
+      document.querySelector(`#${activeTab}-tab`).style.display = "flex";
+      document.querySelector(`#${activeTab}-tab-icon`).style.fill = "#db7787";
+      document.querySelector(`#${activeTab}-tab-text`).style.color = "#db7787";
+      window.location.hash = `#${activeTab}`;
+
+      setInterval(
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth"
+        }),
+        1000
+      );
     }
   };
 
-  /*
-add for loop create a function to iterate over all the tabs
-  if (window.location.pathname === "/") {
-    document.querySelector("#home-tab-icon").style.fill = "#8c8c8c";
-    document.querySelector("#home-tab-text").style.color = "#8c8c8c";
+  if (window.location.pathname === "/" && window.innerWidth < 1024) {
+    activateTab("home");
   }
-*/
 </script>

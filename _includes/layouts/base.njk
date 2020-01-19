@@ -32,6 +32,17 @@ const hideTabs = document.querySelector("#tabBar");
     hideTabs.style.display = "none";
   }
 */
+
+if (window.location.pathname === "/" && window.location.hash === "") {
+  activateTab("home");
+}
+allTabs.forEach(eachTab => {
+  if (window.innerWidth < 1024) {
+    if (window.location.hash === `#${eachTab}`) {
+      activateTab(`${eachTab}`);
+    }
+  }
+});
 </script>
 
 
