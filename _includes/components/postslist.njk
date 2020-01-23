@@ -13,7 +13,7 @@
   {% for post in postslist | reverse %}
   {# for tag in post.data.tags #}
   {# if tag == "test" #}
-  <article {% if post.url == url %} data-current="current item" {% endif %} class="p-6 mt-3 rounded-lg shadow entry entry--category is-home sm:rounded sm:shadow sm:p-8" style="overflow: hidden; max-width: 92%;">
+  <article {% if post.url == url %} data-current="current item" {% endif %} class="{{ post.data.tags }} p-6 mt-3 rounded-lg shadow entry entry--category is-home sm:rounded sm:shadow sm:p-8" style="overflow: hidden; max-width: 92%;" id="all, {{ post.data.tags }}">
     <h3 class="entry-heading--category">
       <a href="{{ post.url | url }}" class="text-2xl lg:text-3xl">
         {% if post.data.title %}
@@ -58,3 +58,7 @@
 
 
 </section>
+
+
+<script>
+</script>
