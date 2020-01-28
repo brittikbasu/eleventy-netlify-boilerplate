@@ -1,77 +1,64 @@
+<section class="hidden lg:flex flex-col items-center sm:px-16 sm:px-20 mb-20 w-full" id="articles-tab">
 
-<section class="max-w-full flex flex-col flex-no-wrap row sm:px-16 sm:px-20 mb-20">
 
-<ul class="flex flex-wrap justify-center sm:mt-20 w-full pl-0">
-  <li class="mr-3 meta--txt">
-    <a href="/germany/" class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" id="germany">Germany</a>
-  </li>
-    <li class="mr-3 meta--txt">
-    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/europe/" id="europe">Europe</a>
-  </li>
- 
-      <li class="mr-3 meta--txt">
-    <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white filter py-2 px-4 text-xs" href="/#articles" id="all">All</a>
-  </li>
+    {% include "components/tags-bar.njk" %}
 
-    <li class="mr-3 meta--txt">
-    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/international/" id="international">International</a>
-  </li>
-      <li class="mr-3 meta--txt">
-    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 filter py-2 px-4 text-xs" href="/opinion/" id="opinion">Opinion</a>
-  </li>
-</ul>
 
-<script async src="https://cse.google.com/cse.js?cx=007909926694560401370:8xs6hbuimwv"></script>
-<div class="gcse-search"></div>
+  {% include "components/google-search.njk" %}
 
 
 
-	{# give padding of style="padding: 0 10%;" in md #}
-	{% for post in postslist | reverse %}
-	{# for tag in post.data.tags #}
-	{# if tag == "test" #}
-	<article{% if post.url == url %} data-current="current item" {% endif %} class="p-4 rounded shadow entry entry--category is-home sm:rounded sm:shadow sm:p-8" style="overflow: hidden; max-width: 92vw;">
-		<h3 class="entry-heading--category">
-			<a href="{{ post.url | url }}" class="text-2xl">
-				{% if post.data.title %}
-				{{ post.data.title }}
-				{% else %}
-				Untitled
-				{% endif %}
-			</a>
-		</h3>
-		{% if post.data.summary %}
-		<p>
-			<a href="{{ post.url | url }}">
-				{{ post.data.summary }}
-			</a>
-		</p>
-		{% endif %}
-		<p class="meta--txt author">
-			<time datetime="{{ post.date | machineDate }}">
-				<!-- <small>{{ post.date | readableDate }} by {{ metadata.author.name }}</small>-->
 
-				<small class="meta meta--primary author text-xs">{{ post.date | readableDate }} by
-					{{ post.data.author }}</small>
+  {# give padding of style="padding: 0 10%;" in md #}
+  {% for post in postslist | reverse %}
+  {# for tag in post.data.tags #}
+  {# if tag == "test" #}
+  <article {% if post.url == url %} data-current="current item" {% endif %} class="{{ post.data.tags }} p-6 mt-3 rounded-lg shadow entry entry--category is-home sm:rounded sm:shadow sm:p-8" style="overflow: hidden; max-width: 92%;" id="all, {{ post.data.tags }}">
+    <h3 class="entry-heading--category">
+      <a href="{{ post.url | url }}" class="text-2xl lg:text-3xl">
+        {% if post.data.title %}
+        {{ post.data.title }}
+        {% else %}
+        Untitled
+        {% endif %}
+      </a>
+    </h3>
+    {% if post.data.summary %}
+    <p class="mb-2 mt-2 text-sm lg:text-base leading-normal lg:leading-relaxed">
+      <a href="{{ post.url | url }}">
+        {{ post.data.summary }}
+      </a>
+    </p>
+    {% endif %}
+    <p class="meta--txt author">
+      <time datetime="{{ post.date | machineDate }}">
+        <!-- <small>{{ post.date | readableDate }} by {{ metadata.author.name }}</small>-->
 
-			</time>
-		</p>
-		{% if post.data.tags %}
-		<p class="meta--txt tag">
-			{% for tag in post.data.tags %}
-			{%- if tag != "post" -%}
-			{% set tagUrl %}/tags/{{ tag }}/{% endset %}
-			<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-			{%- endif -%}
-			{% endfor %}
-		</p>
+        <small class="meta meta--primary author text-xs">{{ post.date | readableDate }} by
+          {{ post.data.author }}</small>
 
-		{% endif %}
+      </time>
+    </p>
+    {% if post.data.tags %}
+    <p class="meta--txt tag text-xs leading-tight mt-1">
+      {% for tag in post.data.tags %}
+      {%- if tag != "post" -%}
+      {% set tagUrl %}/{{ tag }}/{% endset %}
+      <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+      {%- endif -%}
+      {% endfor %}
+    </p>
 
-		</article>
-		{# endif #}
-		{# endfor #}
-		{% endfor %}
+    {% endif %}
 
-	
+  </article>
+  {# endif #}
+  {# endfor #}
+  {% endfor %}
+
+
 </section>
+
+
+<script>
+</script>

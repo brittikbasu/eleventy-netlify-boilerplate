@@ -4,210 +4,103 @@
 
   <body class="parent">
 
+<div class="sidebar lg:flex lg:flex-col p-0" style="/*padding-top: 17vh*/">
+  <div class="sidebar-container flex flex-col justify-center lg:pt-24">
+    {% include "components/intro-card.njk" %}
+    {% include "components/floating-nav.njk" %}
+    {% include "components/twitter-timeline.njk" %}
+    {# include "components/footer.njk" #}
+
+  </div>
+</div>
 
 
-    <div class="sidebar md:flex md:flex-col p-0 hidden" style="padding-top: 17vh">
-      <div class="sidebar-container flex flex-col justify-center pt-6">
+<div class="absolute content max-w-full lg:p-3 top-0 lg:relative">
 
-
-
-        <div id="sidebar-articles">
-
-          <div class="p-4 rounded-lg w-11/12 shadow-2xl" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
-    background: hsla(0, 0%, 100%, 0.94); padding-top: 0; margin-bottom: 2vh;">
-            <a href="{{ '/' | url }}" class="logo flex justify-center" style="height:11.5vw;">
-              <div class="fixed" style="background: white; height:11.5vw"></div>
-              <img src="{{metadata.logo}}" class="logo-img h-auto w-9/12 mr-4">
-            </a>
-
-            <p class="text-xs font-semibold" style="margin-bottom:0; font-family: inter;">
-              Seit dem 27. September 2019 gibt es einen ersten Vernetzungsversuch
-              bestehender Initiativen zur Problematik durch die Kampagne „Death in
-              Custody“, die Polizeiarbeit mit Todesfolgen für Persons of Colour
-              aufarbeitet. Der Zusammenschluss besteht aus hauptsächlich
-              Berlin-zentrierten Organisationen, beschäftigt sich aber auch mit
-              bundesweiten Vernetzungsmöglichkeiten.</p>
-            <a href="./">
-              <p class="text-center text-xs font-semibold mt-2" style="margin-bottom:0;">MEHR WISSEN</p>
-            </a>
-          </div>
-
-
-          <div class="flex justify-center sm:mt-3" style="margin-top:11.5vh"><a class="twitter-timeline" data-width="460" data-theme="light" data-link-color="#D97685" href="https://twitter.com/DICCampaignDE"></a>
-          </div>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-
-           <div id="sidebar-home" class="mt-4">
-          <div class="p-4 rounded-lg w-11/12 shadow shadow" style="margin:0 auto; border: 1px solid hsla(350, 57%, 65%, 0.15);
-    background: #fff; padding-top: 0; margin-bottom: 2vh;">
-
-    <h3 class="text-center mt-6">Our Partners</h3>
-    <div class="flex flex-col justify-between items-center w-full mb-2 mt-6">
-        <a href="https://kop-berlin.de/"><img src="../../static/img/kop white logo.svg" alt="" class="w-16 h-14 mt-1"></a>
-
-                <a href="https://www.eoto-archiv.de/"><img src="../../static/img/e1t1.jpg" alt="" class="w-32 mt-4"></a>
-                        <a href="https://bdb-germany.de/de/willkommen/"><img src="../../static/img/cropped-bund-antidiskriminierung-bildungsarbeit-logo.png" alt="" class="w-24 h-8 mt-6"></a>
-
-
-            <a href="http://www.migrationsrat.de/"><img src="../../static/img/mr.jpg" alt="" class="w-32 mt-6"></a>
-
-        <a href="https://justizwatch.noblogs.org/"><img src="../../static/img/jw.jpg" alt="" class="w-32 mt-6 rounded"></a>
-
-    <a href="http://isdonline.de/"><img src="../../static/img/isd.jpg" alt="" class="w-16 h-12 mt-1"></a>
-    <a href="https://wearebornfreeberlin.wordpress.com/"><img src="../../static/img/we-are-born-free.jpg" alt="" class="w-12 h-12 mt-4 rounded-full"></a>
+  {{ layoutContent | safe }}
 
 </div>
 
-          </div>
-        </div>
+<script>
+      /*
+const windowHeight = document.querySelector('html').scrollHeight;
+document.querySelector('body').height = windowHeight;
 
-        <div class="flex justify-center"> {% include "components/footer.njk" %} </div>
-      </div>
-    </div>
+  if (location.pathname.indexOf("/posts/") == 0) {
+const hideTabs = document.querySelector("#tabBar");
+    hideTabs.style.display = "none";
+  }
+*/
 
-    <div class="content max-w-full p-3">
+ if (location.pathname.indexOf("/events/") === 0 || location.pathname.indexOf("/posts/") === 0) {
+   console.log("inside events or post page");
+     if (window.innerWidth < 1023) {
+     document.querySelector(`#home-tab`).style.display = "none";
+    console.log("window smaller than 1023 px, tweets should be hidden");
 
-      {% include "components/nav.njk" %}
+     }
+     else{
+       console.log("window bigger than 1023 px, tweets should be hidden");
+     document.querySelector(`#tweets-tab`).style.display = "none";
+     document.querySelector(`#home-tab`).style.display = "flex";
+     }
+  }
+/*
+  if (location.pathname.indexOf("/events/") == 0 || location.pathname.indexOf("/post/") == 0 && window.innerWidth > 1023) {
+    console.log("hide tweets");
+     document.querySelector(`#tweets-tab`).style.display = "none";
+     document.querySelector(`#home-tab`).style.display = "flex";
+  }
+  */
+
+if (window.location.pathname === "/" && window.location.hash === "") {
+    if (window.innerWidth < 1024) {
+activateTab("home");
+    }
+    else{
+      activateTab("articles");
+    }
+}
+allTabs.forEach(eachTab => {
+  if (window.innerWidth < 1024) {
+    if (window.location.hash === `#${eachTab}`) {
+      activateTab(`${eachTab}`);
+    }
+  }
+  else{
+    let allTabs = ["articles", "events", "contact"];
+        if (window.location.hash === `#${eachTab}`) {
+      activateTab(`${eachTab}`);
+    }
+  } 
+});
 
 
-      <div id="home">
-        {{ layoutContent | safe }}
-      </div>
+let coverSrc = "";  
+try { // statements to try
+coverSrc = document.querySelectorAll('img')[9].src;
+}
+catch (e) {
+coverSrc = ""; 
+}
 
-      <div id="articles">
-        {% set postslist = collections.posts %}
-        {% include "components/postslist.njk" %}
-      </div>
 
-      <div id="events">
-        {% set eventslist = collections.event %}
-        {% include "components/eventslist.njk" %}
-      </div>
+if(coverSrc.charAt(coverSrc.length-4) === "." || coverSrc.charAt(coverSrc.length-5) === "."){
+// image uploaded for article
+  console.log("image found");
 
-      <div id="contact">
-        {% include "components/form.njk" %}
-      </div>
-    </div>
-    <style>
-      .microlink_card {
-        min-width: 100%;
-        padding: 1%;
-      }
+document.querySelectorAll('img')[9].style.display = "none";
+document.querySelector(".post-header").style.backgroundImage = `url(${coverSrc})`;
+}
+else{
+  console.log("no image found");
+  //document.querySelectorAll('img')[9].style.display = "block";
+document.querySelector(".post-header").classList.remove("post-header");
+document.querySelector(".post-header-text").classList.remove("post-header-text");
+}
+</script>
 
-      @media (min-width: 768px) {
-        .microlink_card {
 
-          height: 33vw;
-        }
-      }
-    </style>
   </body>
 
-  <script>
-    const sidebarHome = document.querySelector("#sidebar-home");
- const sidebarArticles = document.querySelector("#sidebar-articles");
-      const hideTabs = document.querySelector("#tabBar");
-
-     sidebarArticles.style.display = "none";
-
-
- var tabs = new Tabby('[data-tabs]');
- window.addEventListener("hashchange", function hideTabBar() {
-   const sidebarArticles = document.querySelector("#sidebar-articles");
-
-   if (location.pathname != "/") {
-     hideTabs.style.display = "none";
-     console.log("this is" + hideTabs);
-     console.log("I'm out");
-   } else {
-     console.log("at home");
-   }
-
-
- }());
-
-
-
- if (location.hash == "#articles") {
-    sidebarArticles.style.display = "block";
-
-   const activePill = document.querySelector("#all");
-   activePill.style.background = "white";
-   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
- } else if (location.pathname == "/germany/") {
-   const activePill = document.querySelector("#germany");
-   activePill.style.background = "white";
-   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
- } else if (location.pathname == "/europe/") {
-   const activePill = document.querySelector("#europe");
-   activePill.style.background = "white";
-   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
- } else if (location.pathname == "/international/") {
-   const activePill = document.querySelector("#international");
-   activePill.style.background = "white";
-   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
- } else if (location.pathname == "/opinion/") {
-   const activePill = document.querySelector("#opinion");
-   activePill.style.background = "white";
-   activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-
- }
-
- var hashChangedTo = function(hash) {
-   location.hash = "#" + hash;
-   if (location.hash == "#articles") {
-     const activePill = document.querySelector("#all");
-     activePill.style.background = "white";
-     activePill.style.border = "1px hsla(351, 57%, 65%, .07) solid";
-     sidebarArticles.style.display = "block";
-    sidebarHome.style.display = "none";
-
-   } 
-      else if (location.hash == "#events") {
-     sidebarArticles.style.display = "block";
-    sidebarHome.style.display = "none"; 
-      }
-
-            else if (location.hash == "#contact") {
-     sidebarArticles.style.display = "block";
-    sidebarHome.style.display = "none"; 
-      }
-
-   else {
-     sidebarArticles.style.display = "none";
-    sidebarHome.style.display = "block";
-
-
-   }
-
- }
-
-
- document.addEventListener('DOMContentLoaded', function(event) {
-
-   if (location.pathname.indexOf("/posts/") == 0) {
-     sidebarArticles.style.display = "block";
-    sidebarHome.style.display = "none"; 
-     microlink('.postBody a', {
-       size: 'large'
-     })
-   }
-
-    if (location.pathname.indexOf("/events/") == 0){
-        sidebarArticles.style.display = "block";
-    sidebarHome.style.display = "none"; 
-        // hideTabs.style.display = "block";
-
- }
-
- })
-
-
-
-
-  </script>
 </html>

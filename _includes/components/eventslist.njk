@@ -1,14 +1,12 @@
-<h1 class="meta--txt meta--primary meta--heading">Events</h1>
-
-
-<section class="sm:flex sm:flex-wrap mb-20 sm:justify-center">
+{% set eventslist = collections.event %}
+<section class="mt-6 hidden lg:flex flex-col items-center sm:px-16 sm:px-20 mb-20 w-full" id="events-tab">
 	{# give padding of style="padding: 0 10%;" in md #}
 	{% for event in eventslist | reverse %}
 	{# for tag in event.data.tags #}
 	{# if tag == "test" #}
 	<article{% if event.url == url %} data-current="current item" {% endif %}
-		class="shadow event p-5 mb-6 rounded text-lg px-5 mt-4 sm:w-5/12 sm:mr-4" onclick="hideTabs()">
-		<h3>
+		class="p-6 mt-3 rounded-lg shadow entry entry--category is-home sm:rounded sm:shadow sm:p-8" style="overflow: hidden; max-width: 92%;"" onclick="hideTabs()">
+		<h3 class="text-xl lg:text-3xl">
 			<a href="{{ event.url | url }}">
 				{% if event.data.title %}
 				{{ event.data.title }}

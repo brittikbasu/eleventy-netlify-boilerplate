@@ -2,20 +2,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title or renderData.title or metadata.title }}</title>
-
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0/dist/css/tabby.min.css">
-<script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0/dist/js/tabby.polyfills.min.js"></script>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% set css %}
-    {% include "assets/css/inline.css" %}
+  {% include "assets/css/tailwind.min.css" %}
+  {% include "assets/css/inline.css" %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
   {% set js %}
-    {% include "assets/js/inline.js" %}
+  {% include "assets/js/inline.js" %}
   {% endset %}
   <script>{{ js | jsmin | safe }}</script>
- <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='f1205e79c5ef6caf5a80aaf84579c55c1d22599a5b5de9026ca39e9fcc24ec72';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
- <script src="https://cdn.jsdelivr.net/combine/npm/react@16/umd/react.production.min.js,npm/react-dom@16/umd/react-dom.production.min.js,npm/styled-components@4/dist/styled-components.min.js,npm/@microlink/mql@latest/dist/mql.min.js,npm/@microlink/vanilla@latest/dist/microlink.min.js"></script>
+  <!-- <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='f1205e79c5ef6caf5a80aaf84579c55c1d22599a5b5de9026ca39e9fcc24ec72';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script> -->
+  <script src="https://cdn.jsdelivr.net/combine/npm/react@16/umd/react.production.min.js,npm/react-dom@16/umd/react-dom.production.min.js,npm/styled-components@4/dist/styled-components.min.js,npm/@microlink/mql@latest/dist/mql.min.js,npm/@microlink/vanilla@latest/dist/microlink.min.js"></script>
 
 </head>
