@@ -11,13 +11,13 @@
 <!-- <a href="{{ '/' | url }}" class="flex justify-center h-25 md:hidden pr-6"><img src="{{metadata.logo}}"
             class="h-32 w-48"></a>-->
 
-<nav class="w-full lg:hidden top-0 sticky">
+<nav class="w-full top-0 sticky lg:flex lg:flex-col lg:items-center lgnav lg:fixed lg:w-1">
   <ul
-    class="sm:rounded tab-bar sticky top-0 block inset-x-0 z-10 bg-white flex justify-between px-4 md:px-16 my-0"
-    style="list-style:none; background-color:#FFF;"
+    class="lg:flex-col sm:rounded tab-bar sticky top-0 block inset-x-0 z-10 bg-white lg:bg-transparent flex justify-between px-4 md:px-16 my-0 lg:w-3/6"
+    style="list-style:none;"
     id="tabBar"
   >
-    <li onclick="activateTab('home')">
+    <li onclick="activateTab('home')" class="lg:hidden">
       <a
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
@@ -25,7 +25,7 @@
           width="25"
           height="25"
           viewBox="0 0 42 42"
-          class="inline-block mb-1"
+          class="inline-block mb-1 lg:mb-0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@
       </a>
     </li>
 
-    <li onclick="activateTab('articles')">
+    <li onclick="activateTab('articles')" class="lg:shadow-2xl lg:rounded-full lg:bg-white lg:w-16 lg:h-16 lg:mt-6 lg:flex lg:justify-center">
       <a
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
@@ -49,7 +49,7 @@
           width="25"
           height="25"
           viewBox="0 0 42 42"
-          class="inline-block mb-1"
+          class="inline-block mb-1 lg:mb-0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@
         <span class="block text-xs" id="articles-tab-text">Articles</span>
       </a>
     </li>
-    <li onclick="activateTab('tweets')">
+    <li onclick="activateTab('tweets')" class="lg:hidden">
       <a
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
@@ -75,7 +75,7 @@
           xmlns="http://www.w3.org/2000/svg"
           width="25"
           height="25"
-          class="inline-block mb-1"
+          class="inline-block  lg:mb-0"
           id="tweets-tab-icon"
         >
           <path
@@ -87,7 +87,7 @@
       </a>
     </li>
 
-    <li onclick="activateTab('events')">
+    <li onclick="activateTab('events')" class="lg:shadow-2xl lg:rounded-full lg:bg-white lg:w-16 lg:h-16 lg:mt-6 lg:flex lg:justify-center">
       <a
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
@@ -95,7 +95,7 @@
           width="25"
           height="25"
           viewBox="0 0 42 42"
-          class="inline-block mb-1"
+          class="inline-block mb-1 lg:mb-0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@
       </a>
     </li>
 
-    <li onclick="activateTab('contact')">
+    <li onclick="activateTab('contact')" class="lg:shadow-2xl lg:rounded-full lg:bg-white lg:w-16 lg:h-16 lg:mt-6 lg:flex lg:justify-center">
       <a
         class="tab w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
       >
@@ -119,7 +119,7 @@
           width="25"
           height="25"
           viewBox="0 0 42 42"
-          class="inline-block mb-1"
+          class="inline-block mb-1 lg:mb-0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -138,11 +138,38 @@
 </nav>
 
 <script>
-  const allTabs = ["home", "tweets", "articles", "events", "contact"];
+  let allTabs = ["home", "tweets", "articles", "events", "contact"];
   const activateTab = activeTab => {
     if (window.location.pathname != "/" && window.innerWidth < 1024) {
       window.location.href = `${window.location.origin}/#${activeTab}`;
     }
+
+        if (window.innerWidth > 1023) {
+  let allTabs = ["articles", "events", "contact"];
+    allTabs.forEach(eachTab => {
+        document.querySelector(`#${eachTab}-tab`).style.display = "none";
+        document.querySelector(`#${eachTab}-tab-icon`).style.fill = "#899aa7";
+        document.querySelector(`#${eachTab}-tab-text`).style.color = "#8c8c8c";
+      });
+
+document.querySelector(`#${activeTab}-tab`).style.display = "flex";
+      document.querySelector(`#${activeTab}-tab-icon`).style.fill = "#db7787";
+      document.querySelector(`#${activeTab}-tab-text`).style.color = "#db7787";
+      window.location.hash = `#${activeTab}`;
+
+      setInterval(
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth"
+        }),
+        1000
+      );
+
+
+
+        }
+
     if (window.innerWidth < 1024) {
       allTabs.forEach(eachTab => {
         document.querySelector(`#${eachTab}-tab`).style.display = "none";
@@ -170,3 +197,17 @@
     activateTab("home");
   }
 </script>
+
+<style>
+@media (min-width: 1024px){
+.lgnav{
+    width: 5rem;
+    float: right;
+    position: fixed;
+    margin-top: 35vh;
+    margin-right: 30px;
+    right:20px;
+}
+}
+
+</style>

@@ -21,7 +21,6 @@
 
 </div>
 
-
 <script>
       /*
 const windowHeight = document.querySelector('html').scrollHeight;
@@ -33,8 +32,34 @@ const hideTabs = document.querySelector("#tabBar");
   }
 */
 
+ if (location.pathname.indexOf("/events/") === 0 || location.pathname.indexOf("/posts/") === 0) {
+   console.log("inside events or post page");
+     if (window.innerWidth < 1023) {
+     document.querySelector(`#home-tab`).style.display = "none";
+    console.log("window smaller than 1023 px, tweets should be hidden");
+
+     }
+     else{
+       console.log("window bigger than 1023 px, tweets should be hidden");
+     document.querySelector(`#tweets-tab`).style.display = "none";
+     document.querySelector(`#home-tab`).style.display = "flex";
+     }
+  }
+/*
+  if (location.pathname.indexOf("/events/") == 0 || location.pathname.indexOf("/post/") == 0 && window.innerWidth > 1023) {
+    console.log("hide tweets");
+     document.querySelector(`#tweets-tab`).style.display = "none";
+     document.querySelector(`#home-tab`).style.display = "flex";
+  }
+  */
+
 if (window.location.pathname === "/" && window.location.hash === "") {
-  activateTab("home");
+    if (window.innerWidth < 1024) {
+activateTab("home");
+    }
+    else{
+      activateTab("articles");
+    }
 }
 allTabs.forEach(eachTab => {
   if (window.innerWidth < 1024) {
@@ -42,6 +67,12 @@ allTabs.forEach(eachTab => {
       activateTab(`${eachTab}`);
     }
   }
+  else{
+    let allTabs = ["articles", "events", "contact"];
+        if (window.location.hash === `#${eachTab}`) {
+      activateTab(`${eachTab}`);
+    }
+  } 
 });
 </script>
 

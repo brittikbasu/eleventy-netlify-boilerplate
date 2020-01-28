@@ -1,0 +1,121 @@
+{% include "components/microlink.njk" %}
+
+{% include "components/logo.njk" %}
+<div class="bottom-0 fixed w-screen">
+{% include "components/nav.njk" %}
+</div>
+
+<main class="content max-w-full" style="overflow-x: hidden;">
+
+  <article class="sm:px-16 md:px-20 p-5 bg-white lg:rounded leading-snug">
+    {# style="padding: 4% 10%;" for bigger screens#}
+ <div class="post-header-text">
+    <h1 class="text-4xl">
+     {{ title }}</h1>
+    <p>
+      <small class="meta meta--primary">
+        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ author }}
+      </small>
+    </p>
+    </div>
+    <div class="post-header" id="scanImage">
+   
+    </div>
+    <div class="postBody mt-5">
+      {{ layoutContent | safe }}
+    </div>
+
+    {% if tags %}
+    <p>
+      {% for tag in tags %}
+      {%- if tag != "post" -%}
+      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+      <a href="{{ tagUrl | url }}" rel="tag" class="hashtag">{{ tag }}</a>
+      {%- endif -%}
+      {% endfor %}
+    </p>
+    {% endif %}
+
+  </article>
+</main>
+
+<style>
+
+.post-header{
+filter: grayscale(1) blur(1px) brightness(0.4);
+    background-size: contain;
+    width: 500%;
+    max-height: 80vh;
+    min-height: 81vh;
+    position: relative;
+margin-top: -3vh;
+}
+.post-header-text{
+position: absolute;
+    color: var(--highlight);
+    z-index: 1;
+    padding: 2%;
+    padding-top: 10vh;
+}
+.postBody{
+}
+
+@media (max-width: 1023px){
+#scanImage{
+-webkit-animation:linear infinite alternate;
+-webkit-animation-name: scanImage;
+-webkit-animation-duration: 16s;
+animation-timing-function: linear;
+}     
+@-webkit-keyframes scanImage {
+    0% { left: -30%;}
+    50%{ left : -130%;}
+    100%{ left: -30%;}
+}
+
+}
+
+@media (min-width: 1024px){
+  .post-header {
+    filter: grayscale(1) blur(1px) brightness(0.4);
+    background-size: cover;
+    width: 135%;
+    min-height: 70vh;
+    position: relative;
+    margin-left: -22.4%;
+}
+.post-header-text{
+margin-top: 25vh;
+    margin-left: -3%;
+    width: 88%;
+}
+main {
+    width: 91.5%;
+}
+}
+
+
+
+
+</style>
+
+<script>
+/*
+     document.querySelectorAll('img')[9].classList.add("cover-img");
+*/
+coverSrc = document.querySelectorAll('img')[9].src;
+if(coverSrc.charAt(coverSrc.length-4) === "." || coverSrc.charAt(coverSrc.length-5) === "."){
+// image uploaded for article
+document.querySelectorAll('img')[9].style.display = "none";
+document.querySelector(".post-header").style.backgroundImage = `url(${coverSrc})`;
+}
+else{
+  document.querySelectorAll('img')[9].style.display = "block";
+
+document.querySelector(".post-header").classList.remove("post-header");
+document.querySelector(".post-header-text").classList.remove("post-header-text");
+
+
+}
+
+</script>
