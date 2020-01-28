@@ -140,7 +140,7 @@
 <script>
   let allTabs = ["home", "tweets", "articles", "events", "contact"];
   const activateTab = activeTab => {
-    if (window.location.pathname != "/" && window.innerWidth < 1024) {
+    if (window.location.pathname != "/") {
       window.location.href = `${window.location.origin}/#${activeTab}`;
     }
 
