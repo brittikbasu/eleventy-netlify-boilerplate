@@ -5,8 +5,8 @@
 	{# for tag in event.data.tags #}
 	{# if tag == "test" #}
 	<article{% if event.url == url %} data-current="current item" {% endif %}
-		class="p-6 mt-3 rounded-lg shadow entry entry--category is-home sm:rounded sm:shadow sm:p-8" style="overflow: hidden; max-width: 92%;"" onclick="hideTabs()">
-		<h3 class="text-xl lg:text-3xl">
+		class="p-6 mt-3 rounded-lg shadow entry entry--category is-home sm:rounded sm:shadow sm:p-8" style="overflow: hidden; max-width: 92%; min-width: 92%;" onclick="hideTabs()">
+		<h3 class="text-xl lg:text-2xl">
 			<a href="{{ event.url | url }}">
 				{% if event.data.title %}
 				{{ event.data.title }}
