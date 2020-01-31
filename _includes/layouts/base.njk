@@ -44,6 +44,30 @@ const hideTabs = document.querySelector("#tabBar");
      document.querySelector(`#tweets-tab`).style.display = "none";
      document.querySelector(`#home-tab`).style.display = "flex";
      }
+
+
+let coverSrc = "";  
+try { // statements to try
+coverSrc = document.querySelectorAll('img')[9].src;
+}
+catch (e) {
+coverSrc = ""; 
+}
+
+
+if(coverSrc.charAt(coverSrc.length-4) === "." || coverSrc.charAt(coverSrc.length-5) === "."){
+// image uploaded for article
+  console.log("image found");
+
+document.querySelectorAll('img')[9].style.display = "none";
+document.querySelector(".post-header").style.backgroundImage = `url(${coverSrc})`;
+}
+else{
+  console.log("no image found");
+  //document.querySelectorAll('img')[9].style.display = "block";
+document.querySelector(".post-header").classList.remove("post-header");
+document.querySelector(".post-header-text").classList.remove("post-header-text");
+}
   }
 /*
   if (location.pathname.indexOf("/events/") == 0 || location.pathname.indexOf("/post/") == 0 && window.innerWidth > 1023) {
@@ -76,28 +100,6 @@ allTabs.forEach(eachTab => {
 });
 
 
-let coverSrc = "";  
-try { // statements to try
-coverSrc = document.querySelectorAll('img')[9].src;
-}
-catch (e) {
-coverSrc = ""; 
-}
-
-
-if(coverSrc.charAt(coverSrc.length-4) === "." || coverSrc.charAt(coverSrc.length-5) === "."){
-// image uploaded for article
-  console.log("image found");
-
-document.querySelectorAll('img')[9].style.display = "none";
-document.querySelector(".post-header").style.backgroundImage = `url(${coverSrc})`;
-}
-else{
-  console.log("no image found");
-  //document.querySelectorAll('img')[9].style.display = "block";
-document.querySelector(".post-header").classList.remove("post-header");
-document.querySelector(".post-header-text").classList.remove("post-header-text");
-}
 </script>
 
 

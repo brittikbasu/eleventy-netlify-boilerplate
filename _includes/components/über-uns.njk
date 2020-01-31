@@ -1,0 +1,57 @@
+<div class="über-uns flex flex-col pt-12 pb-6 lg:pt-4 p-4 lg:rounded-lg lg:w-11/12 shadow-2xl lg:min-h-0 lg:mb-8 lg:items-center hidden" id="about-tab">
+  <a href="{{ '/' | url }}" class="lg:flex logo flex justify-center">
+    <img
+      src="{{ metadata.logo }}"
+      class="logo-img h-32 lg:h-auto w-9/12 mr-4"
+    />
+  </a>
+  <h4 class="text-center mt-3 mb-1 lg:mb-0 lg:hidden">Über Uns</h4>
+  <p>
+    Regelmäßig sterben Menschen in Gewahrsam oder durch Polizeischüsse. Offizielle Statistiken werden dazu nicht veröffentlicht. Die Todesfälle der letzten Zeit – Hussam Fadl, Amad Ahmad, Matiullah Jabarkhil, Rooble Warsame, William Tonou-Mbobda, Aman A. – legen aber nahe, dass Schwarze Menschen und Menschen of Color ein besonders hohes Risiko laufen, in staatlicher „Obhut“ ihr Leben zu verlieren oder durch die Polizei getötet zu werden; ein klarer Hinweis auf rassistische Strukturen.
+  </p>
+  <br>
+  <p>
+    Was in Gewahrsam passiert, entzieht sich äußerer Kontrolle. Das hat zur Folge, dass bei Todesfällen Polizei und Wachpersonal entscheiden können, was über das Geschehene berichtet wird. Immer wieder führt dies zur Kriminalisierung der Opfer, da diese, um die Polizei zu entlasten, nach ihrem Tod selbst als Täter*innen dargestellt werden. Die wirklich Verantwortlichen müssen hingegen so gut wie nie mit Konsequenzen rechnen. Die Behörden setzen alles daran, Versäumnisse und Verbrechen von Bediensteten des Staates zu vertuschen und Ermittlungen zu verschleppen, bis ihre Einstellung kaum mehr mediales Interesse erzeugt.
+  </p>
+  <br>
+  <p>
+    Die Kampagne „Death in Custody“
+  </p>
+  <ul>
+    <li>- recherchiert und veröffentlicht Informationen, um sichtbar zu machen, wie häufig und kontinuierlich in Gewahrsam gestorben wird
+    </li>
+    <li>- erinnert an Menschen of Color, die in Gewahrsam starben, sodass ihre Geschichten nicht vergessen werden
+    </li>
+    <li>- setzt sich dafür ein, Gruppen, für die Tod in Gewahrsam ein Risiko darstellt, zu vernetzen und ihren Widerstand zu stärken
+    </li>
+    <li>- fordert Aufklärung, Rechenschaft und die Etablierung von effektiven Schutzmechanismen, um Tod in Gewahrsam zu verhindern
+    </li>
+  </ul>
+</div>
+<div id="about-tab-icon"></div>
+<div id="about-tab-text"></div>
+
+<style>
+#about-tab{
+  background: var(--see-through);
+  display: flex;
+    width: 80%;
+    margin-left: 8vw;
+    padding: 4%;
+    margin-top: .1vw;
+}
+#about-tab .logo-img{
+width: 18vw;
+margin-bottom: 1rem;
+}
+
+  @media (max-width: 1023px) {
+#about-tab {
+  width: 100%;
+  margin-left: 0;
+  margin-top: -1vh;
+}
+#about-tab .logo{
+display: none;
+  }
+</style>

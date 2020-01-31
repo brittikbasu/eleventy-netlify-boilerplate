@@ -18,6 +18,7 @@
   --tweety: #e0e8ed;
   --tweety-light: #f4f8fb;
   --jail: #494949;
+  --see-through: hsla(0, 0%, 100%, 0.94);
 }
 
 html {

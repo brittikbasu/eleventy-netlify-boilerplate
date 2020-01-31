@@ -138,14 +138,14 @@
 </nav>
 
 <script>
-  let allTabs = ["home", "tweets", "articles", "events", "contact"];
+  let allTabs = ["home", "tweets", "articles", "events", "contact", "about"];
   const activateTab = activeTab => {
     if (window.location.pathname != "/") {
       window.location.href = `${window.location.origin}/#${activeTab}`;
     }
 
         if (window.innerWidth > 1023) {
-  let allTabs = ["articles", "events", "contact"];
+  let allTabs = ["articles", "events", "contact", "about"];
     allTabs.forEach(eachTab => {
         document.querySelector(`#${eachTab}-tab`).style.display = "none";
         document.querySelector(`#${eachTab}-tab-icon`).style.fill = "#899aa7";
@@ -165,8 +165,14 @@ document.querySelector(`#${activeTab}-tab`).style.display = "flex";
         }),
         1000
       );
-
-
+        if (window.location.hash === `#about`) {
+           document.querySelector(`.parent`).style.display = "flex";
+            document.querySelector(`.sidebar`).style.display = "none";
+        }
+        else{
+               document.querySelector(`.parent`).style.display = "grid";
+            document.querySelector(`.sidebar`).style.display = "flex";
+        }
 
         }
 

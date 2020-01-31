@@ -1,5 +1,5 @@
 <div
-  class="intro-card flex flex-col pt-12 lg:pt-4 p-4 lg:rounded-lg lg:w-11/12 shadow-2xl lg:min-h-0 lg:mb-8"
+  class="intro-card flex flex-col lg:pt-12 lg:pt-4 p-4 lg:rounded-lg lg:w-11/12 shadow-2xl lg:min-h-0 lg:mb-8"
   id="home-tab"
 >
   <a href="{{ '/' | url }}" class="hidden lg:flex logo flex justify-center">
@@ -19,7 +19,7 @@
   <h4 class="text-center mt-8">Unsere Partner</h4>
   {% include "components/logos-marquee.njk" %}
   <button
-    onclick="window.location.href='/posts/polizeiarbeit-mit-todesfolge.-eine-recherche-bringt-licht-ins-dunkel/'"
+    onclick="activateTab('about');"
     class="mt-6 rounded border-solid border-2 p-2 w-6/12 self-center rounded-full"
   >
     <p class="text-center text-xs font-semibold" style="color:#dd7888">
