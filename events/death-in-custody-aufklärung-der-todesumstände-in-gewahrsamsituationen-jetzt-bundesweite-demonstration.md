@@ -10,6 +10,8 @@ organizer: Kampagne Death In Custody
 tags:
   - event
 ---
+![](/static/img/3-s2.0-b9780128000342003293-f0400329-04-9780128000342.jpg)
+
 anlässlich der in Berlin gestarteten Kampagne "Death in Custody. Aufklärung der Todesumstände in Gewahrsamsituationen jetzt!" laden wir Euch nächsten 14.03.2020 zu einem bundes- und europaweiten Vernetzungstreffen und zu einer Demo am 15.03. zum Internationalen Tag gegen Polizeigewalt ein.
 
 Die Kampagne wird sich bis zum Black-Lives-Matter-Month 2020 aktiv dafür einsetzen,
