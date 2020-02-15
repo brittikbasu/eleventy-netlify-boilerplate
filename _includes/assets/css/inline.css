@@ -14,7 +14,7 @@
   --highlight: #f7f5dd;
   --dark: #282f33;
   --disabled: #8c8c8c;
-  --text-muted: #899aa7;
+  --text-muted: hsla(202, 14%, 46%, 0.75);
   --tweety: #e0e8ed;
   --tweety-light: #f4f8fb;
   --jail: #494949;
@@ -141,7 +141,7 @@ h3 {
   line-height: 1.12528;
   font-weight: 900;
   margin: 0;
-  color: var(--primary);
+  color: #d56d7b;
   font-family: "Source Serif Pro", TimesNewRoman, Times New Roman, Times, serif;
 }
 
@@ -170,9 +170,27 @@ h6 {
 
 article p {
   font-family: Inter;
-  line-height: 30px;
+  line-height: 1.625;
   color: var(--dark);
-  margin-top: 0.75rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+article {
+  line-height: 1.625;
+}
+
+article ul {
+  color: var(--dark);
+  list-style-type: disc !important;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 40px;
+}
+b,
+strong {
+  font-weight: bolder;
+  color: #364954;
 }
 
 .event {
